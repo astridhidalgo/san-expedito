@@ -18,6 +18,7 @@ form
 fieldset
 {
 	width:100%;
+	
 	label, input
 	{
 		width:inherit;
