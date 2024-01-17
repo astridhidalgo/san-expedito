@@ -1,8 +1,28 @@
 @import "ext/normalize.css";
+@import 'ext/fuentes.css';
 
 *
 {
+	margin:0px;
+	padding:0px;
+
+	font-family:RethinkSansRegular;
 	box-sizing: border-box;
+}
+
+:root
+{
+	--nord0:#2e3440;
+	--nord1:#3b4252;
+	--nord2:#434c5e;
+	--nord3:#4c566a;
+
+	--nord6:#eceff4;
+}
+
+body
+{
+	background-color:var(--nord0);
 }
 
 form
@@ -12,23 +32,68 @@ form
 	left:50%;
 	transform:translate(-50%, -50%);
 	/* width:min-content; */
-	 width:400px; 
+	width:400px; 
 }
 
 fieldset
 {
 	width:100%;
-	
+	height:inherit;
+
+	border:solid 2px var(--nord3) ;
+	background-color:var(--nord1);
+
 	label, input
 	{
 		width:inherit;
 		margin-bottom:10px;
+
+		border:none;
+		background-color:var(--nord3);
+
+		color: var(--nord6);
 	}
 
-	.label-nombre
+	legend
+	{
+		margin:0 calc(100% - 50%);
+		padding:6px;
+		width: 180px;
+
+		background-color:var(--nord3);
+
+		color: var(--nord6);
+		font-weight:bold;
+		text-align:center;
+	}
+
+	input
+	{
+		padding:6px;
+	}
+
+	.label-campo
 	{
 		display:block;
 		width:100%;
 		margin-bottom:5px;
+
+		color: var(--nord6);
+	}
+
+	button
+	{
+		padding:6px;
+
+		border:none;
+		background-color:var(--nord3);
+
+		color:var(--nord6);
+
+		&:hover
+		{
+			background-color:var(--nord6);
+			color:var(--nord3);
+		}
 	}
 }
