@@ -21,13 +21,62 @@
 	--nord6:#eceff4;
 }
 
+body
+{
+	background-color:var(--nord1);
+}
+
 .menu-sgi
 {
+	width:100%;
+	height:min-content; 
+
+	background-color:var(--nord2);
+	font-size:0px;
+
 	list-style: none;
-	/* background-color:var(--nord1); */
 
 	li
 	{
-		display:inline-block;
+		display:inline-block; 
+		width:min-content;
+		height:inherit;
+	}
+
+	a
+	{
+		display:inherit; 
+		width:80px;
+
+		padding:10px;
+
+		background-color:var(--nord3);
+
+		color:var(--nord6);
+		font-size:1rem;
+		text-decoration:none;
+		text-align:center;
+
+		&:hover
+		{
+			background-color:var(--nord6);
+			color:var(--nord3);
+		}
+	}
+}
+
+.submenu-sgi
+{
+	display:inline-block;
+
+	.submenu-sgi-lista
+	{
+		display:none;
+		position:absolute;
+	}
+
+	&:hover .submenu-sgi-lista
+	{
+		display:block;
 	}
 }
