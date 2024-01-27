@@ -78,44 +78,39 @@
 	}
 }
 
-.main
+.lista
 {
-	z-index:-1;
-	position:relative;
+	position:fixed;
+	bottom:0px;
+	left:0px;
 
-	width:100%;
+	width:80%;
+	height:calc(100% - 38px);
 
-	.lista
-	{
-		overflow:scroll;
+	background-color:var(--nord1);
+	color:var(--nord6);
 
-		position:fixed;
-		left:0px;
+	overflow:scroll;
+	z-index: -1;
+}
 
-		width:80%;
-		height:100%;
-		background-color:var(--nord1);
+.sidebar
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
 
-		/* color del texto */
-		color:var(--nord6);
-	}
+	position:fixed;
+	bottom:0px;
+	right:0px;
 
-	.sidebar
-	{
-		display:flex;
-		justify-content:center;
-		align-items:center;
+	width:20%;
+	height:calc(100% - 38px);
 
-		position:fixed;
-		right:0px;
+	background-color:var(--nord3);
 
-		width:20%;
-		height:100%;
-		background-color:var(--nord3);
-
-		/* color del texto */
-		color:var(--nord6);
-	}
+	/* color del texto */
+	color:var(--nord6);
 }
 
 .tabla-productos
