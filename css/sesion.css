@@ -1,104 +1,88 @@
 @import "ext/normalize.css";
-@import 'ext/fuentes.css';
-
-*
-{
-	margin:0px;
-	padding:0px;
-
-	font-family:RethinkSansRegular;
-	box-sizing: border-box;
-}
-
-:root
-{
-	--nord0:#2e3440;
-	--nord1:#3b4252;
-	--nord2:#434c5e;
-	--nord3:#4c566a;
-
-	--nord4:#d8dee9;
-	--nord6:#eceff4;
-}
+@import "ext/general.css";
 
 form
 {
-	position:fixed;
-	width:100%;
-	height:100%;
-	 background-color:var(--nord0); 
-	/* background-image:linear-gradient(to left, var(--nord0), var(--nord1), var(--nord0)); */
-	/* background-image:linear-gradient(to left, #ff8000, #9e3000, #ff8000); */
-}
+	position: fixed;
 
-fieldset
-{
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform:translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
 
-	padding:15px;
+	background-color: var(--nord0);
 
-	width:min-content;
-	height:min-content;
-
-	border:solid 2px var(--nord2);
-	background-color:var(--nord1);
-	color:var(--nord6);
-
-	/* box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.5); */
-
-	legend
+	fieldset
 	{
-		padding:6px;
-		background-color:var(--nord3);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		padding: 15px;
+
+		width: min-content;
+		height: min-content;
+
+		border: solid 2px var(--nord2);
+		background-color: var(--nord1);
+
+		color: var(--nord6);
+
+		legend
+		{
+			padding: 6px;
+			background-color: var(--nord3);
+
+		}
+
+		.nombre-campo
+		{
+			display: block;
+
+			margin-bottom: 5px;
+			width: 400px;
+
+			color: var(--nord6);
+		}
+
+		input
+		{
+			display: block;
+
+			margin-bottom: 10px;
+			padding: 5px;
+
+			width: 400px;
+
+			border: solid 2px var(--nord3);
+			background-color: var(--nord2);
+
+			color: var(--nord6);
+
+			&:focus
+			{
+				background-color: var(--nord4);
+				color: var(--nord2);
+			}
+		}
+
+		button
+		{
+			margin-top: 10px;
+			padding: 5px;
+
+			border: solid 2px var(--nord3);
+			background-color: var(--nord2);
+
+			color: var(--nord6);
+
+			&:hover
+			{
+				cursor: pointer;
+
+				background-color: var(--nord4);
+				color: #000000;
+			}
+		}
 	}
 }
 
-.nombre-campo, input
-{
-	display:block;
-	width:400px;
-
-	color:var(--nord6);
-}
-
-.nombre-campo
-{
-	margin-bottom:5px;
-}
-
-input
-{
-	padding:5px;
-	margin-bottom:10px;
-
-	border:solid 2px var(--nord3);
-	background-color:var(--nord2);
-	color:var(--nord6);
-
-	&:focus
-	{
-		background-color:var(--nord4);
-		color:var(--nord2);
-	}
-}
-
-button
-{
-	margin-top:10px;
-	padding:5px;
-
-	border:solid 2px var(--nord3);
-	background-color:var(--nord2);
-	color:var(--nord6);
-
-	&:hover
-	{
-		cursor:pointer;
-
-		background-color:var(--nord4);
-		color:#000000;
-	}
-}

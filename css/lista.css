@@ -1,127 +1,112 @@
 @import "ext/normalize.css";
-@import 'ext/fuentes.css';
+@import "ext/general.css";
 
-*
+.menu
 {
-	min-width:0px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
 
-	margin:0px;
-	padding:0px;
-
-	font-family:RethinkSansRegular;
-	box-sizing: border-box;
-}
-
-:root
-{
-	--nord0:#2e3440;
-	--nord1:#3b4252;
-	--nord2:#434c5e;
-	--nord3:#4c566a;
-
-	--nord4:#d8dee9;
-	--nord6:#eceff4;
-}
-
-.menu-sgi
-{
-	width:100%;
+	width: 100%;
 	height:min-content;
 
-	background-color:var(--nord3);
+	background-color: var(--nord2);
 	font-size:0px;
 
-	list-style: none;
-
-	li
+	.menu-boton
 	{
-		display:inline-block;
-		width:min-content;
-		height:inherit;
-	}
+		display: inline-block;
 
-	a
-	{
-		display:inherit;
-		width:80px;
-
-		padding:10px;
-
-		background-color:var(--nord3);
-
-		color:var(--nord6);
-		font-size:1rem;
-		text-decoration:none;
-		text-align:center;
-
-		&:hover
+		a
 		{
-			background-color:var(--nord6);
-			color:var(--nord3);
+			display: inherit;
+
+			padding: 10px;
+			width:80px;
+
+			background-color: var(--nord3);
+			color: var(--nord6);
+			font-size: 1rem;
+			text-align: center;
+			text-decoration: none;
+
+			&:hover
+			{
+				background-color: var(--nord6);
+				color: var(--nord3);
+			}
 		}
 	}
+}
 
-	.submenu-sgi
+.submenu-seccion
+{
+	display: inline-block;
+
+	.submenu
 	{
-		display:inline-block;
+		display: none;
+		position: absolute;
 
-		.submenu-sgi-lista
+		.menu-boton
 		{
-			display:none;
-			position:absolute;
-		}
+			display: block;
 
-		&:hover .submenu-sgi-lista
-		{
-			display:block;
+			a
+			{
+				width:160px;
+			}
 		}
+	}
+
+	&:hover .submenu
+	{
+		display: block;
 	}
 }
 
 .lista
 {
-	position:fixed;
-	bottom:0px;
-	left:0px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
 
-	width:80%;
-	height:calc(100% - 38px);
+	width: 80%;
+	height: calc(100% - 38px);
 
-	background-color:var(--nord1);
-	color:var(--nord6);
+	background-color: var(--nord1);
+	color: var(--nord6);
 
-	overflow:scroll;
+	overflow-y: scroll;
 	z-index: -1;
 }
 
 .sidebar
 {
-	display:flex;
-	justify-content:center;
-	align-items:center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-	position:fixed;
-	bottom:0px;
-	right:0px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
 
-	width:20%;
-	height:calc(100% - 38px);
+	width: 20%;
+	height: calc(100% - 38px);
 
-	background-color:var(--nord3);
-
-	/* color del texto */
-	color:var(--nord6);
+	background-color: var(--nord3);
+	color: var(--nord6);
 }
 
 .tabla-productos
 {
-	width:100%;
-	border-collapse:collapse;
+	width: 100%;
+	border-collapse: collapse;
 
 	th, td
 	{
-		padding:10px;
-		border:2px solid var(--nord4);
+		padding: 10px;
+		border: 2px solid var(--nord4);
 	}
 
 	/* cabecera de tabla */
