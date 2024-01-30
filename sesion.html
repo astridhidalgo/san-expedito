@@ -7,20 +7,19 @@
 	<title>SGI5 | Iniciar sesión</title>
 </head>
 <body>
-	<form method="post">
-	<fieldset>
-		<legend>SGI5 · Iniciar sesión</legend>
-		<label>
-			<span class="nombre-campo">Usuario:</span>
-			<input type="text" name="admin_usuario" placeholder="admin">
-		</label>
-		<label>
-			<span class="nombre-campo">Contraseña:</span>
-			<input type="password" name="admin_clave" placeholder="1234">
-		</label>
-		<button type="submit">Aceptar</button>
-		<button type="button">Opciones</button>
-	</fieldset>
+	<form class="SesionLogin" method="post">
+		<p class="TituloLogin">SGI5 - Iniciar sesión</p>
+		<div class="CamposLogin">
+			<input type="text" name="NombreAdmin" placeholder="Usuario">
+			<input type="password" name="ContrasenyaAdmin" placeholder="Contraseña">
+		</div>
+		<div class="BotonesLogin">
+			<button type="button">Aceptar</button>
+			<button type="button">Opciones</button>
+		</div>
 	</form>
+	<div class="VersionSGI5">
+		<p>v24.01.30-dev</p>
+	</div>
 </body>
 </html>

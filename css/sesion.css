@@ -1,62 +1,60 @@
 @import "ext/normalize.css";
 @import "ext/general.css";
 
-form
+/* reescribiendo este código de mierda */
+body
+{
+	background-color: var(--nord0);
+}
+
+.SesionLogin
 {
 	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 
-	width: 100%;
-	height: 100%;
+	padding: 40px 10px 10px 10px;
+	width: 350px;
 
-	background-color: var(--nord0);
+	border: 2px solid var(--nord3);
+	background-color: var(--nord1);
 
-	fieldset
+	.TituloLogin
 	{
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		top: 0px;
+		left: 0px;
 
-		padding: 15px;
+		padding: 6px;
 
-		width: min-content;
-		height: min-content;
-
-		border: solid 2px var(--nord2);
-		background-color: var(--nord1);
+		background-color: var(--nord3);
 
 		color: var(--nord6);
+		font-weight: bold;
+	}
 
-		legend
-		{
-			padding: 6px;
-			background-color: var(--nord3);
-
-		}
-
-		.nombre-campo
-		{
-			display: block;
-
-			margin-bottom: 5px;
-			width: 400px;
-
-			color: var(--nord6);
-		}
+	.CamposLogin
+	{
+		width:100%;
 
 		input
 		{
 			display: block;
-
 			margin-bottom: 10px;
-			padding: 5px;
 
-			width: 400px;
+			padding: 6px;
+			width: inherit;
 
-			border: solid 2px var(--nord3);
+			border: none;
 			background-color: var(--nord2);
 
 			color: var(--nord6);
+
+			&:hover
+			{
+				background-color: var(--nord3);
+			}
 
 			&:focus
 			{
@@ -64,25 +62,47 @@ form
 				color: var(--nord2);
 			}
 		}
+	}
+
+	.BotonesLogin
+	{
+		display: flex;
+		gap:10px;
+		justify-content: center;
 
 		button
 		{
-			margin-top: 10px;
-			padding: 5px;
+			padding: 6px;
+			width: 100px;
 
-			border: solid 2px var(--nord3);
+			border: none;
 			background-color: var(--nord2);
 
 			color: var(--nord6);
 
 			&:hover
 			{
+				background-color: var(--nord3);
 				cursor: pointer;
+			}
 
+			&:active
+			{
 				background-color: var(--nord4);
-				color: #000000;
+				color: var(--nord2);
 			}
 		}
 	}
 }
 
+.VersionSGI5
+{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+
+	padding: 6px;
+
+	background-color: var(--nord3);
+	color: var(--nord6);
+}
