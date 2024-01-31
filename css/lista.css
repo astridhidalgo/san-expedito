@@ -1,7 +1,7 @@
 @import "ext/normalize.css";
 @import "ext/general.css";
 
-.menu
+.Menu
 {
 	position: fixed;
 	top: 0px;
@@ -10,10 +10,10 @@
 	width: 100%;
 	height:min-content;
 
-	background-color: var(--nord2);
+	background-color: var(--nord1);
 	font-size:0px;
 
-	.menu-boton
+	.MenuBoton
 	{
 		display: inline-block;
 
@@ -24,7 +24,7 @@
 			padding: 10px;
 			width:80px;
 
-			background-color: var(--nord3);
+			background-color: var(--nord2);
 
 			color: var(--nord6);
 			font-size: 1rem;
@@ -33,23 +33,29 @@
 
 			&:hover
 			{
-				background-color: var(--nord6);
-				color: var(--nord3);
+				background-color: var(--nord3);
+				color: var(--nord6);
+			}
+
+			&:active
+			{
+				background-color: var(--nord4);
+				color: var(--nord2);
 			}
 		}
 	}
 }
 
-.submenu-seccion
+.SubmenuSeccion
 {
 	display: inline-block;
 
-	.submenu
+	.Submenu
 	{
 		display: none;
 		position: absolute;
 
-		.menu-boton
+		.MenuBoton
 		{
 			display: block;
 
@@ -60,13 +66,13 @@
 		}
 	}
 
-	&:hover .submenu
+	&:hover .Submenu
 	{
 		display: block;
 	}
 }
 
-.lista
+.Lista
 {
 	position: fixed;
 	bottom: 0px;
@@ -82,24 +88,7 @@
 	z-index: -1;
 }
 
-.sidebar
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
-
-	width: 20%;
-	height: calc(100% - 38px);
-
-	background-color: var(--nord3);
-	color: var(--nord6);
-}
-
-.tabla-head
+.TablaHead
 {
 	display: flex;
 	position: sticky;
@@ -124,12 +113,12 @@
 	}
 }
 
-.tabla-productos
+.TablaProductos
 {
 	width: 100%;
 	border-collapse: collapse;
 
-	.tabla-data
+	.TablaData
 	{
 		&:nth-child(even)
 		{
@@ -146,3 +135,106 @@
 		}
 	}
 }
+
+.Sidebar
+{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+
+	width: 20%;
+	height: calc(100% - 38px);
+
+	background-color: var(--nordBG);
+	color: var(--nord6);
+
+	.InformacionProducto
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		padding: 10px;
+		width: 100%;
+
+		.Precio
+		{
+			padding: 20px;
+			width: inherit;
+
+			background-color: var(--nord1);
+
+			font-size: 3.5em;
+			text-align: center;
+		}
+
+		.Nombre
+		{
+			padding: 10px;
+			width: inherit;
+
+			background-color: var(--nord2);
+
+			text-align: center;
+		}
+	}
+
+	.PanelBusqueda
+	{
+		position: absolute;
+		bottom: 0px;
+
+		padding: 10px;
+		width: 100%;
+
+		.BarraBusqueda
+		{
+			display: block;
+
+			padding: 6px;
+			width: inherit;
+
+			border: none;
+			background-color: var(--nord1);
+
+			color: var(--nord6);
+
+			&:hover
+			{
+				background-color: var(--nord3);
+			}
+
+			&:focus
+			{
+				background-color: var(--nord4);
+				color: var(--nord2);
+			}
+		}
+
+		.FiltroBusqueda
+		{
+			display: block;
+
+			padding: 6px;
+			width: inherit;
+
+			border: none;
+			background-color: var(--nord1);
+
+			color: var(--nord6);
+
+			&:hover
+			{
+				background-color: var(--nord3);
+			}
+
+			&:active
+			{
+				background-color: var(--nord4);
+				color: var(--nord2);
+			}
+		}
+	}
+}
+

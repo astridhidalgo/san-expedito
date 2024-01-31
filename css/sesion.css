@@ -4,7 +4,7 @@
 /* reescribiendo este código de mierda */
 body
 {
-	background-color: var(--nord0);
+	background-color: var(--nordBG);
 }
 
 .SesionLogin
