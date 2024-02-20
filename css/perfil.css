@@ -1,0 +1,86 @@
+@import "ext/normalize.css";
+@import "ext/general.css";
+
+body
+{
+	background-color: var(--nordBG);
+}
+
+.SGIMenu
+{
+	display: flex;
+	gap: 6px;
+	width: inherit;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.Boton
+	{
+		display: inline-block;
+		position: relative;
+
+		padding: 10px;
+		width: 150px;
+		height: 150px;
+
+		background-color: var(--nord2);
+		color: var(--nord6);
+
+		&:hover
+		{
+			background-color: var(--nord3);
+			cursor: pointer;
+		}
+
+		&:active
+		{
+			background-color: var(--nord4);
+			color: var(--nord2);
+		}
+
+		span
+		{
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 80%;
+
+			text-align: center;
+		}
+	}
+}
+
+.Version
+{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+
+	.VersionSGI5
+	{
+		padding: 6px;
+		float: left;
+
+		background-color: var(--nord3);
+
+		color: var(--nord6);
+		text-align: center;
+	}
+
+	.VersionNWJS
+	{
+		padding: 6px;
+		float: left;
+
+		background-color: var(--nwjs-azul);
+
+		color: var(--nord6);
+		text-align: center;
+	}
+}
+

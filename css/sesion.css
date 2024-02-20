@@ -7,7 +7,7 @@ body
 	background-color: var(--nordBG);
 }
 
-.SesionLogin
+.VentanaLogin
 {
 	position: fixed;
 	top: 50%;
@@ -95,14 +95,32 @@ body
 	}
 }
 
-.VersionSGI5
+.Version
 {
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
 
-	padding: 6px;
+	.VersionSGI5
+	{
+		padding: 6px;
+		float: left;
 
-	background-color: var(--nord3);
-	color: var(--nord6);
+		background-color: var(--nord3);
+
+		color: var(--nord6);
+		text-align: center;
+	}
+
+	.VersionNWJS
+	{
+		padding: 6px;
+		float: left;
+
+		background-color: var(--nwjs-azul);
+
+		color: var(--nord6);
+		text-align: center;
+	}
 }
+

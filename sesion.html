@@ -4,22 +4,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/sesion.css">
-	<title>SGI5 | Iniciar sesión</title>
+	<title>SGI5</title>
 </head>
 <body>
-	<form class="SesionLogin" method="post">
+	<form class="VentanaLogin" action="perfil.html">
 		<p class="TituloLogin">SGI5 - Iniciar sesión</p>
 		<div class="CamposLogin">
-			<input type="text" name="NombreAdmin" placeholder="Usuario">
-			<input type="password" name="ContrasenyaAdmin" placeholder="Contraseña">
+			<input type="text" placeholder="Usuario" required>
+			<input type="password" placeholder="Contraseña" required>
 		</div>
 		<div class="BotonesLogin">
-			<button type="button">Aceptar</button>
+			<button type="submit">Acceder</button>
 			<button type="button">Opciones</button>
 		</div>
 	</form>
-	<div class="VersionSGI5">
-		<p>v24.01.30-dev</p>
+
+	<div class="Version">
+		<p class="VersionSGI5">v24.01.30-dev</p>
+		<p class="VersionNWJS">NW.js v0.84.0</p>
 	</div>
 </body>
 </html>
