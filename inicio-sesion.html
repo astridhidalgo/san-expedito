@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/inicio-sesion.css">
+	<title>SGI5</title>
+</head>
+<body>
+	<form class="VentanaLogin">
+		<p class="TituloLogin">Iniciar sesión</p>
+		<div class="CamposLogin">
+			<select name="TipoCuenta">
+				<option value="stdrt">Estándar</option>
+				<option value="admin">Administrador</option>
+			</select>
+			<input name="ContrasenyaCuenta" type="password" placeholder="Contraseña" pattern="[0-9]*[A-Za-z]*[0-9]*" required>
+		</div>
+		<button class="BotonIniciarSesion" type="submit">Aceptar</button>
+	</form>
+	<div class="Version">
+		<p class="SGI5">v12.04.24-dev</p>
+		<p class="NestJS">NestJS v0.0.0</p>
+	</div>
+</body>
+</html>

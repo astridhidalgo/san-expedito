@@ -1,0 +1,154 @@
+@import "ext/normalize.css";
+@import "ext/general.css";
+
+:root
+{
+	--TamanyoBoton: 150px;
+}
+
+.MenuSesion
+{
+	display: flex;
+	gap: 10px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: min-content;
+	height: min-content;
+
+	.LogoFirma
+	{
+		width: 310px;
+		height: 310px;
+		
+		border-radius: 100%;
+		background-color: lightblue;
+	}
+
+	.MenuGrid
+	{
+		display: inline-grid;
+		gap: 10px;
+		grid-template-columns: var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton);
+		grid-template-rows: var(--TamanyoBoton) var(--TamanyoBoton);
+
+		.BotonMenu
+		{
+			display: block;
+			background-color: var(--nord8);
+
+			color: var(--nord0);
+			text-align: center;
+			text-decoration: none;
+
+			span
+			{
+				display: block;
+
+				position: relative;
+				top: 65%;
+				left: 50%;
+				transform: translate(-50%, 50%);
+			}
+		}
+
+		.Ventas
+		{
+			background-image: url("../img/botones/dolar.png");
+			background-repeat: no-repeat;
+			background-position: 50% 35%;
+			background-size: 50%;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				background-image: url("../img/botones/dolar-seleccion.png");
+
+				color: var(--nord6);
+			}
+		}
+
+		.Productos
+		{
+			background-image: url("../img/botones/vistaprevia.png");
+			background-repeat: no-repeat;
+			background-position: 50% 35%;
+			background-size: 50%;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				background-image: url("../img/botones/vistaprevia-seleccion.png");
+
+				color: var(--nord6);
+			}
+		}
+
+		.Categorias
+		{
+			background-image: url("../img/botones/categoria.png");
+			background-repeat: no-repeat;
+			background-position: 50% 35%;
+			background-size: 50%;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				background-image: url("../img/botones/categoria-seleccion.png");
+
+				color: var(--nord6);
+			}
+		}
+
+		.Proveedores
+		{
+			background-image: url("../img/botones/proveedor.png");
+			background-repeat: no-repeat;
+			background-position: 50% 35%;
+			background-size: 50%;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				background-image: url("../img/botones/proveedor-seleccion.png");
+
+				color: var(--nord6);
+			}
+		}
+
+		.Facturas
+		{
+			background-image: url("../img/botones/orden-compra.png");
+			background-repeat: no-repeat;
+			background-position: 50% 35%;
+			background-size: 50%;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				background-image: url("../img/botones/orden-compra-seleccion.png");
+
+				color: var(--nord6);
+			}
+		}
+
+		.CerrarSesion
+		{
+			background-image: url("../img/botones/cerrar-sesion.png");
+			background-repeat: no-repeat;
+			background-position: 50% 35%;
+			background-size: 50%;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				background-image: url("../img/botones/cerrar-sesion-seleccion.png");
+
+				color: var(--nord6);
+			}
+		}
+	}
+}

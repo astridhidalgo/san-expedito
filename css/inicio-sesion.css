@@ -1,0 +1,93 @@
+@import "ext/normalize.css";
+@import "ext/general.css";
+
+.VentanaLogin
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 40px 10px 10px 10px;
+	width: 350px;
+
+	background-color: var(--nord4);
+
+	.TituloLogin
+	{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+
+		padding: 6px;
+
+		background-color: var(--nord10);
+
+		color: var(--nord6);
+		font-weight: bold;
+	}
+
+	.CamposLogin
+	{
+		width:100%;
+
+		select, input
+		{
+			display: block;
+			margin-bottom: 10px;
+
+			padding: 6px;
+			width: inherit;
+
+			border: none;
+			background-color: var(--nord7);
+
+			color: var(--nord0);
+
+			&:hover
+			{
+				background-color: var(--nord8);
+				color: var(--nord3);
+			}
+
+			&[name="TipoCuenta"]
+			{
+				text-align: center;
+			}
+
+			/*
+			&[name="ClaveCuenta"]:focus
+			{
+				background-color: var(--nord4);
+				color: var(--nord2);
+			}
+			*/
+		}
+	}
+
+	.BotonIniciarSesion
+	{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+
+		padding: 6px;
+		width: 100px;
+
+		border: none;
+		background-color: var(--nord8);
+
+		color: var(--nord0);
+
+		&:hover
+		{
+			cursor: pointer;
+		}
+
+		&:active
+		{
+			background-color: var(--nordBG);
+			color: var(--nord6);
+		}
+	}
+}
