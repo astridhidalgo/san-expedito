@@ -50,17 +50,24 @@
 		{
 			display: grid;
 			gap: 20px;
-			grid-template-columns: 180px 300px auto;
+			grid-template-columns: 195px 300px auto;
 			
 			width: 100%;
 			height: min-content;
 
 			.BotonAgregarProducto
 			{
-				padding: 15px;
+				padding: 5px;
+				padding-left: 40px;
 
 				border: 0px;
+
 				background-color: #007f7f;
+				background-image: url("../img/botones/agregar-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 5% 50%;
+				background-size: 16%;
+
 
 				color: var(--nord6);
 
@@ -73,18 +80,100 @@
 
 			.BarraBusqueda
 			{
-				padding: 15px;
+				padding: 5px;
+				padding-left: 46px;
 
 				border: 0px;
+
 				background-color: var(--nord7);
+				background-image: url("../img/botones/buscar.png");
+				background-repeat: no-repeat;
+				background-position: 3% 50%;
+				background-size: 10%;
 
 				color: var(--nord0);
 			}
 
 			.ContadorProductos
 			{
-				padding: 15px;
-				background-color: red;
+				padding: 5px;
+				text-align: right;
+
+				span
+				{
+					font-size: 2rem;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.TablaProductos
+		{
+			overflow-y: scroll;
+
+			position: relative;
+			top: 20px;
+			left: 0px;
+
+			width: inherit;
+			height: calc(100% - 95px);
+
+			background-color: lightblue;
+
+			table
+			{
+				/*
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				*/
+
+				width: 100%;
+				border-spacing: 0px;
+
+				thead
+				{
+					position: sticky;
+					top: 0px;
+					left: 0px;
+
+					background-color: var(--nord10);
+					color: var(--nord6);
+
+					th
+					{
+						padding: 10px;
+
+						&:nth-child(even)
+						{ background-color: rgba(255, 255, 255, 0.08); }
+					}
+
+				}
+
+				tbody
+				{
+					background-color: var(--navbar2);
+
+					tr
+					{
+						&:nth-child(even)
+						{ background-color: var(--navbar); }
+
+						&:hover
+						{
+							background-color: var(--nord6);
+							cursor: pointer;
+						}
+					}
+
+					td
+					{
+						padding: 10px;
+
+						&:nth-child(even)
+						{ background-color: rgba(255, 255, 255, 0.4); }
+					}
+				}
 			}
 		}
 	}
