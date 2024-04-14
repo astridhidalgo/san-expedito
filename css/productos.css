@@ -5,5 +5,87 @@
 
 .ContenedorPrincipal
 {
-	background-color: red;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+	width: calc(100% - 180px);
+	height: 100%;
+
+	.Encabezado
+	{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		
+		padding-left: 20px;
+		padding-right: 20px;
+
+		width: 100%;
+
+		.Nombre
+		{
+			margin-bottom: 10px;
+		}
+
+		.Descripcion
+		{
+			padding-bottom: 20px;
+			border-bottom: solid 2px var(--nord3);
+		}
+	}
+
+	.AreaTrabajo
+	{
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+
+		padding: 20px;
+
+		width: 100%;
+		height: calc(100% - 109px);
+
+		.BarraHerramientas
+		{
+			display: grid;
+			gap: 20px;
+			grid-template-columns: 180px 300px auto;
+			
+			width: 100%;
+			height: min-content;
+
+			.BotonAgregarProducto
+			{
+				padding: 15px;
+
+				border: 0px;
+				background-color: #007f7f;
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.BarraBusqueda
+			{
+				padding: 15px;
+
+				border: 0px;
+				background-color: var(--nord7);
+
+				color: var(--nord0);
+			}
+
+			.ContadorProductos
+			{
+				padding: 15px;
+				background-color: red;
+			}
+		}
+	}
 }

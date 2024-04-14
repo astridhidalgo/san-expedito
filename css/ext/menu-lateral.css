@@ -2,6 +2,7 @@
 {
 	--TamanyoBoton: 70px;
 }
+
 .MenuLateral
 {
 	position: absolute;
@@ -31,24 +32,29 @@
 	{
 
 		display: grid;
-		gap: 10px;
 		grid-template-columns: 100%;
 		grid-template-rows: var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton);
-
-		width: 100%;
 
 		position: relative;
 		top: 20px;
 		left: 50%;
 		transform: translateX(-50%);
 
+		width: 100%;
+
 		.BotonMenu
 		{
 			display: block;
-			background-color: var(--nord8);
+			background-color: var(--navbar);
 
 			color: var(--nord0);
 			text-decoration: none;
+
+			&:hover
+			{
+				background-color: var(--nord0);
+				color: var(--nord6);
+			}
 		}
 	}
 
@@ -69,6 +75,12 @@
 		color: var(--nord6);
 		font-weight: bold;
 		text-decoration: none;
+
+		&:hover
+		{
+			background-color: var(--nord0);
+			color: var(--nord6);
+		}
 	}
 
 	.BotonMenu, .BotonCerrarSesion
@@ -95,10 +107,7 @@
 
 		&:hover
 		{
-			background-color: var(--nord0);
 			background-image: url("../../img/botones/dolar-seleccion.png");
-
-			color: var(--nord6);
 		}
 	}
 
@@ -111,10 +120,7 @@
 
 		&:hover
 		{
-			background-color: var(--nord0);
 			background-image: url("../../img/botones/vistaprevia-seleccion.png");
-
-			color: var(--nord6);
 		}
 	}
 
@@ -127,10 +133,7 @@
 
 		&:hover
 		{
-			background-color: var(--nord0);
 			background-image: url("../../img/botones/categoria-seleccion.png");
-
-			color: var(--nord6);
 		}
 	}
 
@@ -143,10 +146,7 @@
 
 		&:hover
 		{
-			background-color: var(--nord0);
 			background-image: url("../../img/botones/proveedor-seleccion.png");
-
-			color: var(--nord6);
 		}
 	}
 
@@ -159,10 +159,7 @@
 
 		&:hover
 		{
-			background-color: var(--nord0);
 			background-image: url("../../img/botones/orden-compra-seleccion.png");
-
-			color: var(--nord6);
 		}
 	}
 
@@ -175,10 +172,7 @@
 
 		&:hover
 		{
-			background-color: var(--nord0);
 			background-image: url("../../img/botones/cerrar-sesion-seleccion.png");
-
-			color: var(--nord6);
 		}
 	}
 }
