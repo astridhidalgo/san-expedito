@@ -48,10 +48,10 @@
 					<tr>
 						<th class="">Código</th>
 						<th class="">Nombre</th>
-						<th class="">Categoría</th>
 						<th class="">Proveedor</th>
+						<th class="">Categoría</th>
 						<th class="">Cantidad</th>
-						<th class="">Medida</th>
+						<th class="">Unidad</th>
 						<th class="">Precio</th>
 					</tr>
 					</thead>
@@ -62,6 +62,33 @@
 				</table>
 			</div>
 		</div>
+	</div>
+	<div class="ModalFondo">
+		<dialog class="ModalAgregarProductos" open="">
+			<form class="FormularioProductos" method="post">
+				<div class="GridFilaUno">
+					<input class="CodigoProducto" type="text" name="CodigoProducto" placeholder="Código">
+					<input class="NombreProducto" type="text" name="NombreProducto" placeholder="Nombre del productos">
+				</div>
+				<div class="GridFilaDos">
+					<input class="CantidadProducto" type="text" name="CantidadProducto" placeholder="Cantidad">
+					<input class="PrecioProducto" type="text" name="PrecioProducto" placeholder="Precio">
+					<input class="UnidadMedidaProducto" type="text" name="UnidadMedidaProducto" placeholder="Unidad medida">
+				</div>
+				<div class="GridFilaTres">
+					<select class="ProveedorProducto" name="ProveedorProducto">
+						<option value="datos">Proveedor no seleccionado</option>
+					</select>
+					<select class="CategoriaProducto" name="CategoriaProducto">
+						<option value="datos">Categoria no seleccionada</option>
+					</select>
+				</div>
+				<div class="GridFilaCuatro">
+					<button class="BotonConfirmar" type="button">Confirmar</button>
+					<button class="BotonCancelar" type="button">Cancelar</button>
+				</div>
+			</form>
+		</dialog>
 	</div>
 	<div class="Version">
 		<p class="SGI5">v12.04.24-dev</p>
