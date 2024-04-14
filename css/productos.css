@@ -2,3 +2,8 @@
 @import "ext/general.css";
 
 @import "ext/menu-lateral.css";
+
+.ContenedorPrincipal
+{
+	background-color: red;
+}

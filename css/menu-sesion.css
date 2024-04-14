@@ -3,7 +3,7 @@
 
 :root
 {
-	--TamanyoBoton: 150px;
+	--TamanyoBoton: 125px;
 }
 
 .MenuSesion
@@ -21,11 +21,19 @@
 
 	.LogoFirma
 	{
-		width: 310px;
-		height: 310px;
+		width: 260px;
+		height: 260px;
 		
 		border-radius: 100%;
 		background-color: lightblue;
+
+		&::before
+		{
+			position: absolute;
+			top: 45%;
+			left: 8%;
+			content: "logotipo de empresa";
+		}
 	}
 
 	.MenuGrid
