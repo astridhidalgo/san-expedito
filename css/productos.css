@@ -50,7 +50,7 @@
 		{
 			display: grid;
 			gap: 20px;
-			grid-template-columns: 195px 300px auto;
+			grid-template-columns: 115px 130px 115px 400px auto;
 			
 			width: 100%;
 			height: min-content;
@@ -66,7 +66,53 @@
 				background-image: url("../img/botones/agregar-seleccion.png");
 				background-repeat: no-repeat;
 				background-position: 5% 50%;
-				background-size: 16%;
+				background-size: 32px;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.BotonModificarProducto
+			{
+				padding: 5px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: var(--nord10);
+				background-image: url("../img/botones/editar-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 5% 50%;
+				background-size: 32px;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.BotonEliminarProducto
+			{
+				padding: 5px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: var(--nord11);
+				background-image: url("../img/botones/borrar-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 5% 50%;
+				background-size: 32px;
 
 
 				color: var(--nord6);
@@ -81,7 +127,7 @@
 			.BarraBusqueda
 			{
 				padding: 5px;
-				padding-left: 46px;
+				padding-left: 50px;
 
 				border: 0px;
 
@@ -89,7 +135,7 @@
 				background-image: url("../img/botones/buscar.png");
 				background-repeat: no-repeat;
 				background-position: 3% 50%;
-				background-size: 10%;
+				background-size: 32px;
 
 				color: var(--nord0);
 			}

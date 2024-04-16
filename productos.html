@@ -34,11 +34,13 @@
 	<div class="ContenedorPrincipal">
 		<div class="Encabezado">
 			<h1 class="Nombre">Productos</h1>
-			<p class="Descripcion">Gestión de productos</p>
+			<p class="Descripcion">Agrega, modifica y elimina productos de tu inventario</p>
 		</div>
 		<div class="AreaTrabajo">
 			<div class="BarraHerramientas">
-				<button class="BotonAgregarProducto" type="button">Agregar producto</button>
+				<button class="BotonAgregarProducto" type="button">Agregar</button>
+				<button class="BotonModificarProducto" type="button">Modificar</button>
+				<button class="BotonEliminarProducto" type="button">Eliminar</button>
 				<input class="BarraBusqueda" type="text" name="ValorBusqueda" placeholder="¿Qué necesitas buscar?">
 				<p class="ContadorProductos"><span>50</span> productos registrados</p>
 			</div>
@@ -51,7 +53,7 @@
 						<th class="">Proveedor</th>
 						<th class="">Categoría</th>
 						<th class="">Cantidad</th>
-						<th class="">Unidad</th>
+						<th class="">Medida</th>
 						<th class="">Precio</th>
 					</tr>
 					</thead>
@@ -73,7 +75,7 @@
 				</div>
 				<div class="GridFilaDos">
 					<input class="CantidadProducto" type="number" name="CantidadProducto" placeholder="Cantidad">
-					<input class="PrecioProducto" type="text" name="PrecioProducto" placeholder="Precio">
+					<input class="PrecioProducto" type="number" name="PrecioProducto" placeholder="Precio">
 					<input class="UnidadMedidaProducto" type="text" name="UnidadMedidaProducto" placeholder="Unidad medida">
 				</div>
 				<div class="GridFilaTres">
