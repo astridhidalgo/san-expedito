@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/categorias.css">
+	<link rel="stylesheet" href="./css/proveedores.css">
 	<title>SGI5</title>
 </head>
 <body>
@@ -17,10 +17,10 @@
 			<a class="BotonMenu Productos" href="./productos.html" draggable="false">
 				<span>Productos</span>
 			</a>
-			<a class="BotonMenu Categorias" href="#" draggable="false">
+			<a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
 				<span>Categorías</span>
 			</a>
-			<a class="BotonMenu Proveedores" href="./proveedores.html" draggable="false">
+			<a class="BotonMenu Proveedores" href="#" draggable="false">
 				<span>Proveedores</span>
 			</a>
 			<a class="BotonMenu Facturas" href="#" draggable="false">
@@ -33,26 +33,32 @@
 	</nav>
 	<div class="ContenedorPrincipal">
 		<div class="Encabezado">
-			<h1 class="Nombre">Categorias</h1>
-			<p class="Descripcion">Gestiona las categorías en tu inventario</p>
+			<h1 class="Nombre">Proveedores</h1>
+			<p class="Descripcion">Gestiona la información de los proveedores</p>
 		</div>
 		<div class="AreaTrabajo">
 			<div class="BarraHerramientas">
 				<button class="BotonAgregarProducto" type="button">Agregar</button>
 				<button class="BotonModificarProducto" type="button">Modificar</button>
 				<button class="BotonEliminarProducto" type="button">Eliminar</button>
-				<p class="ContadorProductos"><span>0</span> categorias registradas</p>
+				<p class="ContadorProductos"><span>0</span> proveedores registrados</p>
 			</div>
 			<div class="TablaProductos">
 				<table>
 					<thead>
 					<tr>
 						<!--<th>ID</th>-->
-						<th>Nombre</th>
+						<th>Titulo</th>
+						<th>Titulo</th>
+						<th>Titulo</th>
+						<th>Titulo</th>
+						<th>Titulo</th>
+						<th>Titulo</th>
+						<th>Titulo</th>
 					</tr>
 					</thead>
 					<tbody>
-						<script src="./js/test/prueba-tabla-categorias.js">
+						<script src="./js/test/prueba-tabla-proveedores.js">
 						</script>
 					</tbody>
 				</table>
@@ -61,10 +67,10 @@
 	</div>
 	<div class="FondoModal">
 		<dialog class="VentanaModal">
-			<p class="TituloModal">Datos de la categoría</p>
+			<p class="TituloModal">Datos del proveedor</p>
 			<form class="FormularioProductos" method="post">
 				<div class="GridFilaUno">
-					<input class="NombreCategoria" type="text" name="NombreCategoria" placeholder="Nombre de la categoria">
+					<input class="NombreProveedor" type="text" name="NombreProveedor" placeholder="Nombre de la proveedor">
 				</div>
 				<div class="GridFilaCuatro">
 					<button class="BotonConfirmar" type="button">Confirmar</button>

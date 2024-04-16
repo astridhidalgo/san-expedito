@@ -50,7 +50,7 @@
 		{
 			display: grid;
 			gap: 20px;
-			grid-template-columns: 120px 135px 120px 350px auto;
+			grid-template-columns: 120px 135px 120px auto;
 			
 			width: 100%;
 			height: min-content;
@@ -124,24 +124,10 @@
 				}
 			}
 
-			.BarraBusqueda
-			{
-				padding: 5px;
-				padding-left: 50px;
-
-				border: 0px;
-
-				background-color: var(--nord7);
-				background-image: url("../img/botones/buscar.png");
-				background-repeat: no-repeat;
-				background-position: 3% 50%;
-				background-size: 32px;
-
-				color: var(--nord0);
-			}
-
 			.ContadorProductos
 			{
+				visibility: hidden;
+
 				padding: 5px;
 				text-align: right;
 
@@ -246,7 +232,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		aspect-ratio: 16 / 9;
+		aspect-ratio: 16 / 6;
 		width: 800px;
 
 		border: none;
@@ -279,17 +265,14 @@
 			width: 500px;
 			height: min-content;
 
-			.GridFilaUno, .GridFilaDos, .GridFilaTres, .GridFilaCuatro
+			.GridFilaUno, .GridFilaCuatro
 			{
 				display: grid;
 				gap: 10px;
 			}
 
 			.GridFilaUno
-			{ grid-template-columns: 160px auto; }
-
-			.GridFilaDos
-			{ grid-template-columns: auto auto auto; }
+			{ grid-template-columns: auto; }
 
 			.GridFilaCuatro
 			{ grid-template-columns: auto auto; }
@@ -303,7 +286,7 @@
 				}
 			}
 
-			.CodigoProducto, .NombreProducto, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
+			.CodigoProducto, .NombreProveedor, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
 			{
 				padding: 10px;
 
@@ -360,4 +343,3 @@
 		}
 	}
 }
-

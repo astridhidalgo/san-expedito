@@ -277,6 +277,15 @@
 			.GridFilaCuatro
 			{ grid-template-columns: auto auto; }
 
+			select, input
+			{
+				&:hover
+				{
+					background-color: var(--nord8);
+					color: var(--nord3);
+				}
+			}
+
 			.CodigoProducto, .NombreCategoria, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
 			{
 				padding: 10px;
