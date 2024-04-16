@@ -2,6 +2,7 @@
 @import "ext/general.css";
 
 @import "ext/menu-lateral.css";
+@import "ext/control-paginas.css";
 
 .ContenedorPrincipal
 {
@@ -139,7 +140,7 @@
 			}
 		}
 
-		.TablaProductos
+		.TablaCategorias
 		{
 			overflow-y: scroll;
 
@@ -148,7 +149,7 @@
 			left: 0px;
 
 			width: inherit;
-			height: calc(100% - 95px);
+			height: calc(100% - 168px);
 
 			background-color: lightblue;
 
