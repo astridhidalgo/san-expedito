@@ -190,7 +190,7 @@
 	width: 100%;
 	height: 100%;
 
-	background-color: rgba(00, 00, 00, 0.5);
+	background-color: rgba(00, 00, 00, 0.6);
 
 	.ModalAgregarProductos
 	{
@@ -200,13 +200,29 @@
 		transform: translate(-50%, -50%);
 
 		aspect-ratio: 16 / 9;
-		width: 900px;
+		width: 800px;
+
+		border: none;
+
+		.TituloModal
+		{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			padding: 6px;
+
+			background-color: var(--nord10);
+
+			color: var(--nord6);
+			font-weight: bold;
+		}
 
 		.FormularioProductos
 		{
 			display: flex;
 			flex-direction: column;
-			gap: 15px;
+			gap: 10px;
 
 			position: absolute;
 			top: 50%;
@@ -219,11 +235,11 @@
 			.GridFilaUno, .GridFilaDos, .GridFilaTres, .GridFilaCuatro
 			{
 				display: grid;
-				gap: 15px;
+				gap: 10px;
 			}
 
 			.GridFilaUno
-			{ grid-template-columns: 157px auto; }
+			{ grid-template-columns: 160px auto; }
 
 			.GridFilaDos
 			{ grid-template-columns: auto auto auto; }
@@ -233,7 +249,7 @@
 
 			.CodigoProducto, .NombreProducto, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
 			{
-				padding: 15px;
+				padding: 10px;
 
 				border: 0px;
 				background-color: var(--nord7);
@@ -242,7 +258,7 @@
 
 			.BotonConfirmar
 			{
-				padding: 15px;
+				padding: 10px;
 				padding-left: 40px;
 
 				border: 0px;
@@ -250,8 +266,8 @@
 				background-color: #007f7f;
 				background-image: url("../img/botones/paloma-seleccion.png");
 				background-repeat: no-repeat;
-				background-position: 25% 50%;
-				background-size: 12%;
+				background-position: 27% 50%;
+				background-size: 10%;
 
 
 				color: var(--nord6);
@@ -273,8 +289,8 @@
 				background-color: var(--nord11);
 				background-image: url("../img/botones/equis-seleccion.png");
 				background-repeat: no-repeat;
-				background-position: 25% 50%;
-				background-size: 12%;
+				background-position: 27% 50%;
+				background-size: 10%;
 
 
 				color: var(--nord6);
