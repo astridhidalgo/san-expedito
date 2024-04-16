@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/ventas.css">
+	<title>SGI5</title>
+</head>
+<body>
+	<nav class="MenuLateral">
+		<!-- reemplazar div con imagen -->
+		<div class="LogoFirma" title="Logotipo de San Expedito" alt="Logotipo de San Expedito"></div>
+		<div class="MenuGrid">
+			<a class="BotonMenu Ventas" href="#" draggable="false">
+				<span>Ventas</span>
+			</a>
+			<a class="BotonMenu Productos" href="./productos.html" draggable="false">
+				<span>Productos</span>
+			</a>
+			<a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
+				<span>Categorías</span>
+			</a>
+			<a class="BotonMenu Proveedores" href="./proveedores.html" draggable="false">
+				<span>Proveedores</span>
+			</a>
+			<a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
+				<span>Facturas</span>
+			</a>
+		</div>
+		<a class="BotonCerrarSesion" href="#" draggable="false">
+			<span>Cerrar sesión</span>
+		</a>
+	</nav>
+	<div class="ContenedorPrincipal">
+		<div class="Encabezado">
+			<h1 class="Nombre">Ventas</h1>
+			<p class="Descripcion">Vende los productos disponibles</p>
+		</div>
+		<div class="AreaTrabajo">
+			<div class="VentanaDatosCliente">
+				<p class="TituloDatosCliente">Datos del cliente</p>
+				<div class="GridDatos">
+					<input class="CedulaCliente" type="text" name="CodigoProducto" placeholder="Cédula">
+					<input class="NombreCliente" type="text" name="NombreCliente" placeholder="Nombre">
+					<input class="ApellidoCliente" type="text" name="ApellidoCliente" placeholder="Apellido">
+				</div>
+			</div>
+			<div class="VentanaDatosVenta">
+				<p class="TituloDatosCliente">Datos del cliente</p>
+				<input class="BusquedaProducto" name="BusquedaProducto" placeholder="¿Qué necesitas encontrar?">
+				<div class="InformacionFactura">
+					<p class="NumeroFactura">N° Factura xxxxxxxxxxxx</p>
+					<p class="FechaFactura">Fecha: 0000-00-00</p>
+				</div>
+				<div class="TablaVentas">
+					<table>
+						<thead>
+						<tr>
+							<th>Código</th>
+							<th>Producto</th>
+							<th>Cantidad</th>
+							<th>Total</th>
+						</tr>
+						</thead>
+						<tbody>
+							<script src="./js/test/prueba-tabla-ventas.js"></script>
+						</tbody>
+					</table>
+				</div>
+				<div class="PrecioTotal">
+					Total: 00
+				</div>
+			</div>
+			<div class="GridConfCanc">
+				<button class="BotonAceptar" type="button">Aceptar</button>
+			</div>
+		</div>
+	</div>
+	<div class="Version">
+		<p class="SGI5">v12.04.24-dev</p>
+	</div>
+	<script src="./js/ext/jquery.js"></script>
+	<script src="./js/ventana-modal.js"></script>
+</body>
+</html>
