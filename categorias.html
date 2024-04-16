@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/productos.css">
+	<link rel="stylesheet" href="./css/categorias.css">
 	<title>SGI5</title>
 </head>
 <body>
@@ -14,10 +14,10 @@
 			<a class="BotonMenu Ventas" href="#" draggable="false">
 				<span>Ventas</span>
 			</a>
-			<a class="BotonMenu Productos" href="#" draggable="false">
+			<a class="BotonMenu Productos" href="./productos.html" draggable="false">
 				<span>Productos</span>
 			</a>
-			<a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
+			<a class="BotonMenu Categorias" href="#" draggable="false">
 				<span>Categorías</span>
 			</a>
 			<a class="BotonMenu Proveedores" href="#" draggable="false">
@@ -33,32 +33,27 @@
 	</nav>
 	<div class="ContenedorPrincipal">
 		<div class="Encabezado">
-			<h1 class="Nombre">Productos</h1>
-			<p class="Descripcion">Agrega, modifica y elimina productos de tu inventario</p>
+			<h1 class="Nombre">Categorias</h1>
+			<p class="Descripcion">Gestiona las categorías disponibles en tu inventario</p>
 		</div>
 		<div class="AreaTrabajo">
 			<div class="BarraHerramientas">
 				<button class="BotonAgregarProducto" type="button">Agregar</button>
 				<button class="BotonModificarProducto" type="button">Modificar</button>
 				<button class="BotonEliminarProducto" type="button">Eliminar</button>
-				<input class="BarraBusqueda" type="text" name="ValorBusqueda" placeholder="¿Qué necesitas buscar?">
-				<p class="ContadorProductos"><span>50</span> productos registrados</p>
+				<p class="ContadorProductos"><span>0</span> categorias registradas</p>
 			</div>
 			<div class="TablaProductos">
 				<table>
 					<thead>
 					<tr>
-						<th>Código</th>
+						<!--<th>ID</th>-->
 						<th>Nombre</th>
-						<th>Proveedor</th>
-						<th>Categoría</th>
-						<th>Cantidad</th>
-						<th>Medida</th>
-						<th>Precio</th>
 					</tr>
 					</thead>
 					<tbody>
-						<script src="./js/test/prueba-tabla-productos.js"></script>
+						<script src="./js/test/prueba-tabla-categorias.js">
+						</script>
 					</tbody>
 				</table>
 			</div>
@@ -66,24 +61,10 @@
 	</div>
 	<div class="FondoModal">
 		<dialog class="VentanaModal">
-			<p class="TituloModal">Datos del producto</p>
+			<p class="TituloModal">Datos de la categoría</p>
 			<form class="FormularioProductos" method="post">
 				<div class="GridFilaUno">
-					<input class="CodigoProducto" type="text" name="CodigoProducto" placeholder="Código">
-					<input class="NombreProducto" type="text" name="NombreProducto" placeholder="Nombre del productos">
-				</div>
-				<div class="GridFilaDos">
-					<input class="CantidadProducto" type="number" name="CantidadProducto" placeholder="Cantidad">
-					<input class="PrecioProducto" type="number" name="PrecioProducto" placeholder="Precio">
-					<input class="UnidadMedidaProducto" type="text" name="UnidadMedidaProducto" placeholder="Unidad medida">
-				</div>
-				<div class="GridFilaTres">
-					<select class="ProveedorProducto" name="ProveedorProducto">
-						<option value="null">Proveedor no seleccionado</option>
-					</select>
-					<select class="CategoriaProducto" name="CategoriaProducto">
-						<option value="null">Categoria no seleccionada</option>
-					</select>
+					<input class="NombreProducto" type="text" name="NombreProducto" placeholder="Nombre de la categoria">
 				</div>
 				<div class="GridFilaCuatro">
 					<button class="BotonConfirmar" type="button">Confirmar</button>
