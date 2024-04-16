@@ -277,7 +277,7 @@
 			.GridFilaCuatro
 			{ grid-template-columns: auto auto; }
 
-			.CodigoProducto, .NombreProducto, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
+			.CodigoProducto, .NombreCategoria, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
 			{
 				padding: 10px;
 
