@@ -1,108 +1,166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/productos.css">
-	<title>SGI5</title>
-</head>
-<body>
-	<nav class="MenuLateral">
-		<!-- reemplazar div con imagen -->
-		<div class="LogoFirma" title="Logotipo de San Expedito" alt="Logotipo de San Expedito"></div>
-		<div class="MenuGrid">
-			<a class="BotonMenu Ventas" href="./ventas.html" draggable="false">
-				<span>Ventas</span>
-			</a>
-			<a class="BotonMenu Productos" href="#" draggable="false">
-				<span>Productos</span>
-			</a>
-			<a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
-				<span>Categorías</span>
-			</a>
-			<a class="BotonMenu Proveedores" href="./proveedores.html" draggable="false">
-				<span>Proveedores</span>
-			</a>
-			<a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
-				<span>Facturas</span>
-			</a>
-		</div>
-		<a class="BotonCerrarSesion" href="#" draggable="false">
-			<span>Cerrar sesión</span>
-		</a>
-	</nav>
-	<div class="ContenedorPrincipal">
-		<div class="Encabezado">
-			<h1 class="Nombre">Productos</h1>
-			<p class="Descripcion">Agrega, modifica y elimina productos de tu inventario</p>
-		</div>
-		<div class="AreaTrabajo">
-			<div class="BarraHerramientas">
-				<button class="BotonAgregarProducto" type="button">Agregar</button>
-				<button class="BotonModificarProducto" type="button">Modificar</button>
-				<button class="BotonEliminarProducto" type="button">Eliminar</button>
-				<input class="BarraBusqueda" type="text" name="ValorBusqueda" placeholder="¿Qué necesitas buscar?">
-				<p class="ContadorProductos"><span>50</span> productos registrados</p>
-			</div>
-			<div class="TablaProductos">
-				<table>
-					<thead>
-					<tr>
-						<th>Código</th>
-						<th>Nombre</th>
-						<th>Proveedor</th>
-						<th>Categoría</th>
-						<th>Cantidad</th>
-						<th>Medida</th>
-						<th>Precio</th>
-					</tr>
-					</thead>
-					<tbody>
-						<script src="./js/test/prueba-tabla-productos.js"></script>
-					</tbody>
-				</table>
-			</div>
-			<div class="ControlPaginas">
-				<button class="BotonPaginaAnterior" type="button">&nbsp;</button>
-				<button class="BotonPaginaSiguiente" type="button">&nbsp;</button>
-				<p class="NumeroPagina">
-					<span>Página 000 de 000</span>
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="FondoModal">
-		<dialog class="VentanaModal">
-			<p class="TituloModal">Datos del producto</p>
-			<form class="FormularioProductos" method="post">
-				<div class="GridFilaUno">
-					<input class="CodigoProducto" type="text" name="CodigoProducto" placeholder="Código">
-					<input class="NombreProducto" type="text" name="NombreProducto" placeholder="Nombre del productos">
-				</div>
-				<div class="GridFilaDos">
-					<input class="CantidadProducto" type="number" name="CantidadProducto" placeholder="Cantidad">
-					<input class="PrecioProducto" type="number" name="PrecioProducto" placeholder="Precio">
-					<input class="UnidadMedidaProducto" type="text" name="UnidadMedidaProducto" placeholder="Unidad medida">
-				</div>
-				<div class="GridFilaTres">
-					<select class="ProveedorProducto" name="ProveedorProducto">
-						<option value="null">Proveedor no seleccionado</option>
-					</select>
-					<select class="CategoriaProducto" name="CategoriaProducto">
-						<option value="null">Categoria no seleccionada</option>
-					</select>
-				</div>
-				<div class="GridFilaCuatro">
-					<button class="BotonConfirmar" type="button">Confirmar</button>
-					<button class="BotonCancelar" type="button">Cancelar</button>
-				</div>
-			</form>
-		</dialog>
-	</div>
-	<div class="Version">
-		<p class="SGI5">v12.04.24-dev</p>
-	</div>
-	<script src="./js/ext/jquery.js"></script>
-	<script src="./js/ventana-modal.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/productos.css" />
+    <title>SGI5</title>
+  </head>
+  <body>
+    <nav class="MenuLateral">
+      <!-- reemplazar div con imagen -->
+      <div
+        class="LogoFirma"
+        title="Logotipo de San Expedito"
+        alt="Logotipo de San Expedito"
+      ></div>
+      <div class="MenuGrid">
+        <a class="BotonMenu Ventas" href="./ventas.html" draggable="false">
+          <span>Ventas</span>
+        </a>
+        <a class="BotonMenu Productos" href="#" draggable="false">
+          <span>Productos</span>
+        </a>
+        <a
+          class="BotonMenu Categorias"
+          href="./categorias.html"
+          draggable="false"
+        >
+          <span>Categorías</span>
+        </a>
+        <a
+          class="BotonMenu Proveedores"
+          href="./proveedores.html"
+          draggable="false"
+        >
+          <span>Proveedores</span>
+        </a>
+        <a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
+          <span>Facturas</span>
+        </a>
+      </div>
+      <a class="BotonCerrarSesion" href="#" draggable="false">
+        <span>Cerrar sesión</span>
+      </a>
+    </nav>
+    <div class="ContenedorPrincipal">
+      <div class="Encabezado">
+        <h1 class="Nombre">Productos</h1>
+        <p class="Descripcion">
+          Agrega, modifica y elimina productos de tu inventario
+        </p>
+      </div>
+      <div class="AreaTrabajo">
+        <div class="BarraHerramientas">
+          <button class="BotonAgregarProducto" type="button">Agregar</button>
+          <button class="BotonModificarProducto" type="button">
+            Modificar
+          </button>
+          <button class="BotonEliminarProducto" type="button">Eliminar</button>
+          <input
+            class="BarraBusqueda"
+            type="text"
+            name="ValorBusqueda"
+            placeholder="¿Qué necesitas buscar?"
+          />
+          <p class="ContadorProductos"><span>50</span> productos registrados</p>
+        </div>
+        <div class="TablaProductos">
+          <table id="tabla-productos">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Proveedor</th>
+                <th>Categoría</th>
+                <th>Cantidad</th>
+                <th style="width: 150px">Unidad Medida</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <script src="./js/test/prueba-tabla-productos.js"></script>
+            </tbody>
+          </table>
+        </div>
+        <div class="ControlPaginas">
+          <button class="BotonPaginaAnterior" type="button">&nbsp;</button>
+          <button class="BotonPaginaSiguiente" type="button">&nbsp;</button>
+          <p class="NumeroPagina">
+            <span>Página 000 de 000</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="FondoModal">
+      <dialog class="VentanaModal">
+        <p class="TituloModal">Datos del producto</p>
+        <form
+          id="formulario-producto"
+          class="FormularioProductos"
+          method="post"
+        >
+          <div class="GridFilaUno">
+            <input
+              class="CodigoProducto"
+              type="text"
+              name="CodigoProducto"
+              placeholder="Código"
+            />
+            <input
+              class="NombreProducto"
+              type="text"
+              name="NombreProducto"
+              placeholder="Nombre del productos"
+            />
+          </div>
+          <div class="GridFilaDos">
+            <input
+              class="CantidadProducto"
+              type="number"
+              name="CantidadProducto"
+              placeholder="Cantidad"
+            />
+            <input
+              class="PrecioProducto"
+              type="number"
+              name="PrecioProducto"
+              placeholder="Precio"
+            />
+            <input
+              class="UnidadMedidaProducto"
+              type="text"
+              name="UnidadMedidaProducto"
+              placeholder="Unidad medida"
+            />
+          </div>
+          <div class="GridFilaTres">
+            <select
+              id="select-proveedores"
+              class="ProveedorProducto"
+              name="ProveedorProducto"
+            >
+              <option value="null">Proveedor no seleccionado</option>
+            </select>
+            <select
+              id="select-categorias"
+              class="CategoriaProducto"
+              name="CategoriaProducto"
+            >
+              <option value="null">Categoria no seleccionada</option>
+            </select>
+          </div>
+          <div class="GridFilaCuatro">
+            <button class="BotonConfirmar" type="submit">Confirmar</button>
+            <button class="BotonCancelar" type="button">Cancelar</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <div class="Version">
+      <p class="SGI5">v12.04.24-dev</p>
+    </div>
+    <script src="./js/ext/jquery.js"></script>
+    <script src="./js/ventana-modal-producto.js"></script>
+  </body>
 </html>

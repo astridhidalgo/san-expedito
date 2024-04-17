@@ -1,95 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/proveedores.css">
-	<title>SGI5</title>
-</head>
-<body>
-	<nav class="MenuLateral">
-		<!-- reemplazar div con imagen -->
-		<div class="LogoFirma" title="Logotipo de San Expedito" alt="Logotipo de San Expedito"></div>
-		<div class="MenuGrid">
-			<a class="BotonMenu Ventas" href="./ventas.html" draggable="false">
-				<span>Ventas</span>
-			</a>
-			<a class="BotonMenu Productos" href="./productos.html" draggable="false">
-				<span>Productos</span>
-			</a>
-			<a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
-				<span>Categorías</span>
-			</a>
-			<a class="BotonMenu Proveedores" href="#" draggable="false">
-				<span>Proveedores</span>
-			</a>
-			<a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
-				<span>Facturas</span>
-			</a>
-		</div>
-		<a class="BotonCerrarSesion" href="#" draggable="false">
-			<span>Cerrar sesión</span>
-		</a>
-	</nav>
-	<div class="ContenedorPrincipal">
-		<div class="Encabezado">
-			<h1 class="Nombre">Proveedores</h1>
-			<p class="Descripcion">Gestiona la información de los proveedores</p>
-		</div>
-		<div class="AreaTrabajo">
-			<div class="BarraHerramientas">
-				<button class="BotonAgregarProducto" type="button">Agregar</button>
-				<button class="BotonModificarProducto" type="button">Modificar</button>
-				<button class="BotonEliminarProducto" type="button">Eliminar</button>
-				<p class="ContadorProductos"><span>0</span> proveedores registrados</p>
-			</div>
-			<div class="TablaProveedores">
-				<table>
-					<thead>
-					<tr>
-						<!--<th>ID</th>-->
-						<th>Titulo</th>
-						<th>Titulo</th>
-						<th>Titulo</th>
-						<th>Titulo</th>
-						<th>Titulo</th>
-						<th>Titulo</th>
-						<th>Titulo</th>
-					</tr>
-					</thead>
-					<tbody>
-						<script src="./js/test/prueba-tabla-proveedores.js">
-						</script>
-					</tbody>
-				</table>
-			</div>
-			<div class="ControlPaginas">
-				<button class="BotonPaginaAnterior" type="button">&nbsp;</button>
-				<button class="BotonPaginaSiguiente" type="button">&nbsp;</button>
-				<p class="NumeroPagina">
-					<span>Página 000 de 000</span>
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="FondoModal">
-		<dialog class="VentanaModal">
-			<p class="TituloModal">Datos del proveedor</p>
-			<form class="FormularioProductos" method="post">
-				<div class="GridFilaUno">
-					<input class="NombreProveedor" type="text" name="NombreProveedor" placeholder="Nombre de la proveedor">
-				</div>
-				<div class="GridFilaCuatro">
-					<button class="BotonConfirmar" type="button">Confirmar</button>
-					<button class="BotonCancelar" type="button">Cancelar</button>
-				</div>
-			</form>
-		</dialog>
-	</div>
-	<div class="Version">
-		<p class="SGI5">v12.04.24-dev</p>
-	</div>
-	<script src="./js/ext/jquery.js"></script>
-	<script src="./js/ventana-modal.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/proveedores.css" />
+    <title>SGI5</title>
+  </head>
+  <body>
+    <nav class="MenuLateral">
+      <!-- reemplazar div con imagen -->
+      <div
+        class="LogoFirma"
+        title="Logotipo de San Expedito"
+        alt="Logotipo de San Expedito"
+      ></div>
+      <div class="MenuGrid">
+        <a class="BotonMenu Ventas" href="./ventas.html" draggable="false">
+          <span>Ventas</span>
+        </a>
+        <a
+          class="BotonMenu Productos"
+          href="./productos.html"
+          draggable="false"
+        >
+          <span>Productos</span>
+        </a>
+        <a
+          class="BotonMenu Categorias"
+          href="./categorias.html"
+          draggable="false"
+        >
+          <span>Categorías</span>
+        </a>
+        <a class="BotonMenu Proveedores" href="#" draggable="false">
+          <span>Proveedores</span>
+        </a>
+        <a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
+          <span>Facturas</span>
+        </a>
+      </div>
+      <a class="BotonCerrarSesion" href="#" draggable="false">
+        <span>Cerrar sesión</span>
+      </a>
+    </nav>
+    <div class="ContenedorPrincipal">
+      <div class="Encabezado">
+        <h1 class="Nombre">Proveedores</h1>
+        <p class="Descripcion">Gestiona la información de los proveedores</p>
+      </div>
+      <div class="AreaTrabajo">
+        <div class="BarraHerramientas">
+          <button class="BotonAgregarProducto" type="button">Agregar</button>
+          <button class="BotonModificarProducto" type="button">
+            Modificar
+          </button>
+          <button class="BotonEliminarProducto" type="button">Eliminar</button>
+          <p class="ContadorProductos">
+            <span>0</span> proveedores registrados
+          </p>
+        </div>
+        <div class="TablaProveedores">
+          <table id="tabla-proveedores">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Proveedor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <script src="./js/test/prueba-tabla-proveedores.js"></script>
+            </tbody>
+          </table>
+        </div>
+        <div class="ControlPaginas">
+          <button class="BotonPaginaAnterior" type="button">&nbsp;</button>
+          <button class="BotonPaginaSiguiente" type="button">&nbsp;</button>
+          <p class="NumeroPagina">
+            <span>Página 000 de 000</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="FondoModal">
+      <dialog class="VentanaModal">
+        <p class="TituloModal">Datos del proveedor</p>
+        <form
+          id="formulario-proveedor"
+          class="FormularioProductos"
+          method="post"
+        >
+          <div class="GridFilaUno">
+            <input
+              class="NombreProveedor"
+              type="text"
+              name="NombreProveedor"
+              placeholder="Nombre de la proveedor"
+            />
+          </div>
+          <div class="GridFilaCuatro">
+            <button class="BotonConfirmar" type="submit">Confirmar</button>
+            <button class="BotonCancelar" type="button">Cancelar</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <div class="Version">
+      <p class="SGI5">v12.04.24-dev</p>
+    </div>
+    <script src="./js/ext/jquery.js"></script>
+    <script src="./js/ventana-modal-proveedores.js"></script>
+  </body>
 </html>
