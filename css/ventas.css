@@ -309,3 +309,39 @@
 		}
 	}
 }
+
+/* campo de texto y botón de eliminar generado por JavaScript */
+.cantidadCompra
+{
+	padding: 10px;
+	height: 38px;
+
+	border: 0px;
+	background-color: var(--nord7);
+	color: var(--nord0);
+
+	&:hover
+	{
+		background-color: var(--nord8);
+		color: var(--nord3);
+	}
+}
+
+.eliminarBtn
+{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	padding: 10px;
+
+	border: none;
+	background-color: var(--nord11);
+	color: var(--nord6);
+
+	&:hover
+	{
+		cursor: pointer;
+		background-color: var(--nord0);
+	}
+}

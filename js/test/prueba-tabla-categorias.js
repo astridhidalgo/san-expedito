@@ -17,7 +17,8 @@ async function obtenerDatosYMostrarTabla() {
       // Agregar una casilla de verificación para la selección
       const seleccion = document.createElement("td");
       const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
+      checkbox.type = "radio";
+      checkbox.name = "categoria-seleccion"
       checkbox.value = categoria.id;
       seleccion.appendChild(checkbox);
       fila.appendChild(seleccion);
