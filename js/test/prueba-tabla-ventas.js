@@ -1,3 +1,4 @@
+let precioTotal = 0;
 document.addEventListener("DOMContentLoaded", async function () {
   document
     .getElementById("buscarProducto")
@@ -48,10 +49,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       fila.innerHTML = `
             <td>${producto.codigo}</td>
             <td>${producto.nombre}</td>
+			<td>${producto.cantidad}</td>
 			<td><input id="cantidadCompra_${producto.codigo}" class="cantidadCompra" name="CantidadCompra"></td>
 			<td>${producto.precio}</td>
 			<td class="totalProducto">0</td>
             <td><button class="eliminarBtn">Eliminar</button></td>
+			<td style="display:none;" class="productoId">${producto.id}</td>
         `;
       tbody.appendChild(fila);
     });
@@ -60,13 +63,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     const botonesEliminar = document.querySelectorAll(".eliminarBtn");
     botonesEliminar.forEach((boton) => {
       boton.addEventListener("click", function () {
+        // Obtener el precio del producto que se eliminará
+        const precioProductoEliminar = parseFloat(
+          this.closest("tr").querySelector("td:nth-child(4)").textContent.trim()
+        );
+
+        // Reducir el precio total al eliminar el producto
+        precioTotal -= precioProductoEliminar;
+
+        // Actualizar el contenido del elemento que muestra el precio total
+        document.getElementById("precioTotal").textContent =
+          precioTotal.toFixed(2);
+
         // Eliminar la fila de la tabla
         const fila = this.closest("tr");
         fila.remove();
       });
     });
-
-    let precioTotal = 0;
 
     const camposCantidad = document.querySelectorAll(".cantidadCompra");
     camposCantidad.forEach((campo) => {
@@ -79,23 +92,25 @@ document.addEventListener("DOMContentLoaded", async function () {
           const precio =
             parseFloat(
               this.closest("tr")
-                .querySelector("td:nth-child(4)")
+                .querySelector("td:nth-child(5)")
                 .textContent.trim()
             ) || 0;
 
           // Calcular el total del producto multiplicando la cantidad por el precio
           const total = cantidad * precio;
-
-          // Actualizar el contenido de la celda del total del producto
+          const precioFormateado1 = total.toFixed(2);
+          const texto = "Bs. ";
+          const mensaje = texto + precioFormateado1;
           this.closest("tr").querySelector(".totalProducto").textContent =
-            total.toFixed(2);
+            mensaje;
 
-          // Sumar el total del producto al total general
-          precioTotal += total;
-
+          precioTotal = precioTotal + total;
+          const preciototalFormateado = precioTotal.toFixed(2);
+          const texto1 = "Bs. ";
+          const mensaje1 = texto1 + preciototalFormateado;
           // Asignar el total general al campo específico
-          document.getElementById("precioTotal").textContent =
-            precioTotal.toFixed(2);
+          document.getElementById("precioTotal").textContent = mensaje1;
+          campo.disabled = true;
         }
       });
     });
@@ -161,4 +176,71 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.log("No se pudo obtener el último correlativo.");
     }
   });
+
+  document
+    .querySelector(".BotonAceptar")
+    .addEventListener("click", async function () {
+      // 1. Recopilar los datos del cliente
+      const cedulaCliente = document.querySelector(".CedulaCliente").value;
+      const nombreCliente = document.querySelector(".NombreCliente").value;
+      const apellidoCliente = document.querySelector(".ApellidoCliente").value;
+
+      // 2. Obtener el número de factura
+      const numeroFactura = document
+        .querySelector(".NumeroFactura")
+        .textContent.split(": ")[1];
+
+      // 3. Obtener la fecha actual
+      const fechaFactura = fechaFormateada; // Ya la tienes formateada en el script
+      const total = document.getElementById("precioTotal").textContent;
+      const totalFormat = total.replace("Bs. ", "");
+
+      // 4. Recopilar los datos de los productos de la tabla
+      const productos = [];
+      document.querySelectorAll("#tablaResultados tbody tr").forEach((row) => {
+        const codigo = row.querySelector("td:nth-child(1)").textContent;
+        const nombre = row.querySelector("td:nth-child(2)").textContent;
+        const cantidad = row.querySelector(".cantidadCompra").value;
+        const precio = row.querySelector("td:nth-child(5)").textContent;
+
+        const id = row.querySelector(".productoId").textContent;
+        productos.push({ codigo, nombre, cantidad, precio, id });
+      });
+
+      // 5. Organizar los datos
+      const datosVenta = {
+        cliente: {
+          cedula: cedulaCliente,
+          nombre: nombreCliente,
+          apellido: apellidoCliente,
+        },
+        numero_factura: numeroFactura,
+        fecha: fechaFactura,
+        total: totalFormat,
+        productos: productos,
+      };
+
+      console.log(datosVenta);
+
+      // 6. Enviar los datos a través de la API
+      try {
+        const response = await fetch("http://localhost:8585/facturas", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datosVenta),
+        });
+
+        if (response.ok) {
+          alert("Datos guardados correctamente");
+          location.reload();
+        } else {
+          alert("Error al guardar los datos");
+        }
+      } catch (error) {
+        console.error("Error al enviar los datos a la API:", error);
+        alert("Error al enviar los datos a la API");
+      }
+    });
 });
