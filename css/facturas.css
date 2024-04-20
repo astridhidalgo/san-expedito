@@ -223,7 +223,8 @@
       }
 
       .GridFilaTres {
-        max-height: 250px;
+
+        height: 250px;
 
         .TablaFactura2 {
           overflow-y: scroll;
