@@ -33,7 +33,6 @@ async function obtenerDatosYMostrarTabla() {
     datos.forEach((producto) => {
       const fila = document.createElement("tr");
 
-      console.log(producto.id);
       // Agregar una casilla de verificación para la selección
       const seleccion = document.createElement("td");
       const radio = document.createElement("input");
@@ -108,3 +107,37 @@ document.addEventListener("DOMContentLoaded", function () {
     eliminarProductosSeleccionados();
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const botonActualizarProducto = document.getElementById(
+    "botonModificarProductos"
+  );
+  botonActualizarProducto.addEventListener("click", function () {
+    actualizarProductosSeleccionados();
+  });
+});
+
+async function actualizarProductosSeleccionados() {
+  const tabla = document.getElementById("tabla-productos");
+  const radioButtons = tabla.querySelectorAll("input[type='radio']:checked");
+
+  if (radioButtons.length === 0) {
+    alert("Por favor, seleccione un producto para Modificar.");
+    $(".FondoModal").css("display", "none");
+    $(".VentanaModal").hide();
+    return;
+  }
+  const productoAModificar = radioButtons[0].value;
+
+  console.log("Producto seleccionado para modificar:", productoAModificar);
+  try {
+    const respuesta = await fetch(
+      `http://localhost:8585/productos/detalle/${productoAModificar}`
+    );
+    const datos = await respuesta.json();
+    console.log(datos);
+    abrirModalModificarProducto(datos);
+  } catch (error) {
+    console.error("Error al obtener la cantidad de productos:", error);
+  }
+}
