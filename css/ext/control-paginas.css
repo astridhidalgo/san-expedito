@@ -1,6 +1,6 @@
 .ControlPaginas
 {
-	display: grid;
+	display: none;
 	gap: 10px;
 	grid-template-columns: 52px 52px auto;
 

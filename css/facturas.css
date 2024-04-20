@@ -51,39 +51,40 @@
 		{
 			display: grid;
 			gap: 20px;
-			grid-template-columns: 350px auto;
+			grid-template-columns: auto 150px 150px;
 			
 			width: 100%;
 			height: min-content;
 
+			/* 46.8px */
 			.BarraBusqueda
 			{
 				padding: 5px;
 				padding-left: 50px;
+
+				height: 46.8px;
 
 				border: 0px;
 
 				background-color: var(--nord7);
 				background-image: url("../img/botones/buscar.png");
 				background-repeat: no-repeat;
-				background-position: 3% 50%;
+				background-position: 10px 50%;
 				background-size: 32px;
 
 				color: var(--nord0);
 			}
 
-			.ContadorProductos
+			.FechaLabel
 			{
-				visibility: hidden;
+				display: grid;
+			}
 
-				padding: 5px;
-				text-align: right;
-
-				span
-				{
-					font-size: 2rem;
-					font-weight: bold;
-				}
+			.FechaDesde, .FechaHasta
+			{
+				border: none;
+				background-color: var(--nord10);
+				color: var(--nord6);
 			}
 		}
 
