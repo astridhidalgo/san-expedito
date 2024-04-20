@@ -45,7 +45,7 @@
     .BarraHerramientas {
       display: grid;
       gap: 20px;
-      grid-template-columns: auto 150px 150px;
+      grid-template-columns: 350px auto 150px 150px;
 
       width: 100%;
       height: min-content;
@@ -223,7 +223,8 @@
       }
 
       .GridFilaTres {
-        max-height: 250px;
+
+        height: 250px;
 
         .TablaFactura2 {
           overflow-y: scroll;
