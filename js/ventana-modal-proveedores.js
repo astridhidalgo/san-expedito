@@ -1,5 +1,5 @@
 //abrir modal
-$(".BotonAgregarProducto").click(function () {
+$(".BotonAgregarProducto, .BotonModificarProducto").click(function () {
   $(".FondoModal").css("display", "block");
   $(".VentanaModal").show();
 });
