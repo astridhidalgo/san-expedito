@@ -4,387 +4,359 @@
 @import "ext/menu-lateral.css";
 @import "ext/control-paginas.css";
 
-.ContenedorPrincipal
-{
-	position: absolute;
-	top: 0px;
-	right: 0px;
+.ContenedorPrincipal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 
-	width: calc(100% - 180px);
-	height: 100%;
+  width: calc(100% - 180px);
+  height: 100%;
 
-	.Encabezado
-	{
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		
-		padding-left: 20px;
-		padding-right: 20px;
+  .Encabezado {
+    position: absolute;
+    top: 0px;
+    left: 0px;
 
-		width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
 
-		.Nombre
-		{
-			margin-bottom: 10px;
-		}
+    width: 100%;
 
-		.Descripcion
-		{
-			padding-bottom: 20px;
-			border-bottom: solid 2px var(--nord3);
-		}
-	}
+    .Nombre {
+      margin-bottom: 10px;
+    }
 
-	.AreaTrabajo
-	{
-		position: absolute;
-		left: 0px;
-		bottom: 0px;
+    .Descripcion {
+      padding-bottom: 20px;
+      border-bottom: solid 2px var(--nord3);
+    }
+  }
 
-		padding: 20px;
+  .AreaTrabajo {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
 
-		width: 100%;
-		height: calc(100% - 109px);
+    padding: 20px;
 
-		.BarraHerramientas
-		{
-			display: grid;
-			gap: 20px;
-			grid-template-columns: auto 150px 150px;
-			
-			width: 100%;
-			height: min-content;
+    width: 100%;
+    height: calc(100% - 109px);
 
-			/* 46.8px */
-			.BarraBusqueda
-			{
-				padding: 5px;
-				padding-left: 50px;
+    .BarraHerramientas {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: auto 150px 150px;
 
-				height: 46.8px;
+      width: 100%;
+      height: min-content;
 
-				border: 0px;
+      /* 46.8px */
+      .BarraBusqueda {
+        padding: 5px;
+        padding-left: 50px;
 
-				background-color: var(--nord7);
-				background-image: url("../img/botones/buscar.png");
-				background-repeat: no-repeat;
-				background-position: 10px 50%;
-				background-size: 32px;
+        height: 46.8px;
 
-				color: var(--nord0);
-			}
+        border: 0px;
 
-			.FechaLabel
-			{
-				display: grid;
-			}
+        background-color: var(--nord7);
+        background-image: url("../img/botones/buscar.png");
+        background-repeat: no-repeat;
+        background-position: 10px 50%;
+        background-size: 32px;
 
-			.FechaDesde, .FechaHasta
-			{
-				border: none;
-				background-color: var(--nord10);
-				color: var(--nord6);
-			}
-		}
+        color: var(--nord0);
+      }
 
-		.TablaFactura
-		{
-			overflow-y: scroll;
+      .FechaLabel {
+        display: grid;
+      }
 
-			position: relative;
-			top: 20px;
-			left: 0px;
+      .FechaDesde,
+      .FechaHasta {
+        border: none;
+        background-color: var(--nord10);
+        color: var(--nord6);
+      }
+    }
 
-			width: inherit;
-			height: calc(100% - 168px);
+    .TablaFactura {
+      overflow-y: scroll;
 
-			background-color: lightblue;
+      position: relative;
+      top: 20px;
+      left: 0px;
 
-			table
-			{
-				/*
+      width: inherit;
+      height: calc(100% - 168px);
+
+      background-color: lightblue;
+
+      table {
+        /*
 				position: absolute;
 				top: 0px;
 				left: 0px;
 				*/
 
-				width: 100%;
-				border-spacing: 0px;
+        width: 100%;
+        border-spacing: 0px;
 
-				thead
-				{
-					position: sticky;
-					top: 0px;
-					left: 0px;
+        thead {
+          position: sticky;
+          top: 0px;
+          left: 0px;
 
-					background-color: var(--nord10);
-					color: var(--nord6);
+          background-color: var(--nord10);
+          color: var(--nord6);
 
-					th
-					{
-						padding: 10px;
+          th {
+            padding: 10px;
 
-						&:nth-child(even)
-						{ background-color: rgba(255, 255, 255, 0.08); }
-					}
+            &:nth-child(even) {
+              background-color: rgba(255, 255, 255, 0.08);
+            }
+          }
+        }
 
-				}
+        tbody {
+          background-color: var(--navbar2);
 
-				tbody
-				{
-					background-color: var(--navbar2);
+          tr {
+            &:nth-child(even) {
+              background-color: var(--navbar);
+            }
 
-					tr
-					{
-						&:nth-child(even)
-						{ background-color: var(--navbar); }
+            &:hover {
+              background-color: var(--nord6);
+              cursor: pointer;
+            }
+          }
 
-						&:hover
-						{
-							background-color: var(--nord6);
-							cursor: pointer;
-						}
-					}
+          td {
+            padding: 10px;
 
-					td
-					{
-						padding: 10px;
-
-						&:nth-child(even)
-						{ background-color: rgba(255, 255, 255, 0.4); }
-					}
-				}
-			}
-		}
-	}
+            &:nth-child(even) {
+              background-color: rgba(255, 255, 255, 0.4);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.FondoModal
-{
-	z-index: 1;
-	display: none;
+.FondoModal {
+  z-index: 1;
+  display: none;
 
-	position: absolute;
-	top: 0px;
-	left: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 
-	background-color: rgba(00, 00, 00, 0.6);
+  background-color: rgba(00, 00, 00, 0.6);
 
-	.VentanaModal
-	{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+  .VentanaModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-		aspect-ratio: 16 / 13;
-		width: 800px;
+    aspect-ratio: 16 / 13;
+    width: 800px;
 
-		border: none;
+    border: none;
 
-		.TituloModal
-		{
-			position: absolute;
-			top: 0px;
-			left: 0px;
+    .TituloModal {
+      position: absolute;
+      top: 0px;
+      left: 0px;
 
-			padding: 6px;
+      padding: 6px;
 
-			background-color: var(--nord10);
+      background-color: var(--nord10);
 
-			color: var(--nord6);
-			font-weight: bold;
-		}
+      color: var(--nord6);
+      font-weight: bold;
+    }
 
-		.VistaFactura
-		{
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
+    .VistaFactura {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
 
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
-			width: 500px;
-			height: min-content;
+      width: 500px;
+      height: min-content;
 
-			.GridFilaUno, .GridFilaDos, .GridFilaTres, .GridFilaCuatro
-			{
-				display: grid;
-				gap: 10px;
-			}
+      .GridFilaUno,
+      .GridFilaDos,
+      .GridFilaTres,
+      .GridFilaCuatro {
+        display: grid;
+        gap: 10px;
+      }
 
-			.GridFilaUno
-			{
-				grid-template-columns: auto;
+      .GridFilaUno {
+        grid-template-columns: auto;
 
-				p
-				{
-					font-size: 1.5rem;
-					font-weight: bold;
-					text-align: center;
-				}
-			}
+        p {
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
 
-			.GridFilaDos
-			{
-				grid-template-rows: auto auto auto;
+      .GridFilaDos {
+        grid-template-rows: auto auto auto;
 
-				p
-				{ padding: 10px; }
-			}
+        p {
+          padding: 10px;
+        }
+      }
 
-			.GridFilaTres
-			{
-				max-height: 250px;
+      .GridFilaTres {
+        max-height: 250px;
 
-				.TablaFactura
-				{
-					overflow-y: scroll;
+        .TablaFactura2 {
+          overflow-y: scroll;
 
-					position: relative;
-					top: 0px;
-					left: 0px;
+          position: relative;
+          top: 0px;
+          left: 0px;
 
-					height: calc(100%);
+          height: calc(100%);
 
-					table
-					{
-						/*
+          table {
+            /*
 						position: absolute;
 						top: 0px;
 						left: 0px;
 						*/
 
-						width: 100%;
-						border-spacing: 0px;
+            width: 100%;
+            border-spacing: 0px;
 
-						thead
-						{
-							position: sticky;
-							top: 0px;
-							left: 0px;
+            thead {
+              position: sticky;
+              top: 0px;
+              left: 0px;
 
-							background-color: var(--nord4);
-							color: var(--nord0);
+              background-color: var(--nord4);
+              color: var(--nord0);
 
-							th
-							{
-								padding: 10px;
+              th {
+                padding: 10px;
 
-								&:nth-child(even)
-								{ background-color: rgba(255, 255, 255, 0.08); }
-							}
+                &:nth-child(even) {
+                  background-color: rgba(255, 255, 255, 0.08);
+                }
+              }
+            }
 
-						}
+            tbody {
+              background-color: var(--nord5);
 
-						tbody
-						{
-							background-color: var(--nord5);
+              tr {
+                &:nth-child(even) {
+                  background-color: var(--nord6);
+                }
 
-							tr
-							{
-								&:nth-child(even)
-								{ background-color: var(--nord6); }
+                &:hover {
+                  background-color: var(--nord6);
+                  cursor: pointer;
+                }
+              }
 
-								&:hover
-								{
-									background-color: var(--nord6);
-									cursor: pointer;
-								}
-							}
+              td {
+                padding: 10px;
 
-							td
-							{
-								padding: 10px;
+                &:nth-child(even) {
+                  background-color: rgba(255, 255, 255, 0.4);
+                }
+              }
+            }
+          }
+        }
 
-								&:nth-child(even)
-								{ background-color: rgba(255, 255, 255, 0.4); }
-							}
-						}
-					}
-				}
+        .PrecioTotal {
+          padding: 15px;
+          text-align: center;
+        }
+      }
 
-				.PrecioTotal
-				{
-					padding: 15px;
-					text-align: center;
-				}
-			}
+      .GridFilaCuatro {
+        grid-template-columns: auto auto;
+      }
 
-			.GridFilaCuatro
-			{ grid-template-columns: auto auto; }
+      select,
+      input {
+        &:hover {
+          background-color: var(--nord8);
+          color: var(--nord3);
+        }
+      }
 
-			select, input
-			{
-				&:hover
-				{
-					background-color: var(--nord8);
-					color: var(--nord3);
-				}
-			}
+      .CodigoProducto,
+      .NombreProducto,
+      .CantidadProducto,
+      .PrecioProducto,
+      .UnidadMedidaProducto,
+      .ProveedorProducto,
+      .CategoriaProducto {
+        padding: 10px;
 
-			.CodigoProducto, .NombreProducto, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
-			{
-				padding: 10px;
+        border: 0px;
+        background-color: var(--nord7);
+        color: var(--nord0);
+      }
 
-				border: 0px;
-				background-color: var(--nord7);
-				color: var(--nord0);
-			}
+      .BotonImprimir {
+        padding: 12px;
+        padding-left: 40px;
 
-			.BotonImprimir
-			{
-				padding: 12px;
-				padding-left: 40px;
+        border: 0px;
 
-				border: 0px;
+        background-color: #007f7f;
+        background-image: url("../img/botones/imprimir-seleccion.png");
+        background-repeat: no-repeat;
+        background-position: 32% 50%;
+        background-size: 26px;
 
-				background-color: #007f7f;
-				background-image: url("../img/botones/imprimir-seleccion.png");
-				background-repeat: no-repeat;
-				background-position: 32% 50%;
-				background-size: 26px;
+        color: var(--nord6);
 
+        &:hover {
+          cursor: pointer;
+          background-color: var(--nord0);
+        }
+      }
 
-				color: var(--nord6);
+      .BotonCancelar {
+        padding: 12px;
+        padding-left: 40px;
 
-				&:hover
-				{
-					cursor: pointer;
-					background-color: var(--nord0);
-				}
-			}
+        border: 0px;
 
-			.BotonCancelar
-			{
-				padding: 12px;
-				padding-left: 40px;
+        background-color: var(--nord11);
+        background-image: url("../img/botones/equis-seleccion.png");
+        background-repeat: no-repeat;
+        background-position: 36% 50%;
+        background-size: 26px;
 
-				border: 0px;
+        color: var(--nord6);
 
-				background-color: var(--nord11);
-				background-image: url("../img/botones/equis-seleccion.png");
-				background-repeat: no-repeat;
-				background-position: 36% 50%;
-				background-size: 26px;
-
-
-				color: var(--nord6);
-
-				&:hover
-				{
-					cursor: pointer;
-					background-color: var(--nord0);
-				}
-			}
-		}
-	}
+        &:hover {
+          cursor: pointer;
+          background-color: var(--nord0);
+        }
+      }
+    }
+  }
 }
-

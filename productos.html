@@ -56,19 +56,26 @@
           <button class="BotonModificarProducto" type="button">
             Modificar
           </button>
-          <button class="BotonEliminarProducto" type="button">Eliminar</button>
+          <button
+            id="botonEliminarProductos"
+            class="BotonEliminarProducto"
+            type="button"
+          >
+            Eliminar
+          </button>
           <input
             class="BarraBusqueda"
             type="text"
             name="ValorBusqueda"
             placeholder="¿Qué necesitas buscar?"
           />
-          <p class="ContadorProductos"><span>50</span> productos registrados</p>
+          <p class="ContadorProductos"><span></span> productos registrados</p>
         </div>
         <div class="TablaProductos">
           <table id="tabla-productos">
             <thead>
               <tr>
+                <th>Seleccionar</th>
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Proveedor</th>

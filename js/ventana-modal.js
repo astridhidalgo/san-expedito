@@ -9,6 +9,11 @@ $(".FacturaModal").click(function () {
   $(".VentanaModal").show();
 });
 
+$(document).on("click", ".FacturaModal", function () {
+  $(".FondoModal").css("display", "block");
+  $(".VentanaModal").show();
+});
+
 //cerrar modal
 $(".BotonCancelar").click(function () {
   $(".FondoModal").css("display", "none");

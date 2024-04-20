@@ -4,6 +4,11 @@ $(".BotonAgregarProducto").click(function () {
   $(".VentanaModal").show();
 });
 
+$(".BotonModificarProducto").click(function () {
+  $(".FondoModal").css("display", "block");
+  $(".VentanaModal").show();
+});
+
 $(".FacturaModal").click(function () {
   $(".FondoModal").css("display", "block");
   $(".VentanaModal").show();
@@ -74,6 +79,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
     location.reload();
   });
+
+  // Obtener el ID del producto a modificar, por ejemplo:
+  const idProducto = obtenerIdProductoAModificar(); // Debes implementar esta función
+
+  // Resto del código similar al de inserción, pero ahora enviando una solicitud PUT o PATCH
+  // en lugar de POST, y utilizando el ID obtenido para identificar el producto a modificar.
+
+  // Objeto con los datos a enviar a la API
+  const datosProductos = {
+    // Campos del producto a modificar...
+  };
+
+  try {
+    const respuesta = await fetch(
+      `http://localhost:8585/productos/${idProducto}`,
+      {
+        method: "PUT", // O PATCH según corresponda
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datosProductos),
+      }
+    );
+
+    // Resto del código similar a la inserción...
+  } catch (error) {
+    console.error("Error al modificar el producto:", error);
+  }
+  location.reload();
 });
 
 // Función para llenar el select de proveedores
@@ -82,7 +116,7 @@ async function llenarSelectProveedores() {
     const respuesta = await fetch("http://localhost:8585/proveedores");
     const datos = await respuesta.json();
     const selectProveedores = document.getElementById("select-proveedores");
-    selectProveedores.innerHTML = ""; // Limpiar el select
+    selectProveedores.innerHTML = "";
     datos.forEach((proveedor) => {
       const opcion = document.createElement("option");
       opcion.text = proveedor.nombre;
