@@ -18,7 +18,7 @@ async function obtenerDatosYMostrarTabla() {
       const seleccion = document.createElement("td");
       const checkbox = document.createElement("input");
       checkbox.type = "radio";
-      checkbox.name = "categoria-seleccion"
+      checkbox.name = "categoria-seleccion";
       checkbox.value = categoria.id;
       seleccion.appendChild(checkbox);
       fila.appendChild(seleccion);
@@ -42,38 +42,38 @@ async function obtenerDatosYMostrarTabla() {
 // Función para eliminar las categorías seleccionadas
 function eliminarCategoriasSeleccionadas() {
   const tabla = document.getElementById("tabla-categorias");
-  const checkboxes = tabla.querySelectorAll("input[type='checkbox']:checked");
-  console.log(checkboxes);
-  const categoriasAEliminar = Array.from(checkboxes).map((checkbox) =>
-    console.log(checkbox.value)
-  );
+  const radioButtons = tabla.querySelectorAll("input[type='radio']:checked");
 
-  // Mostrar las categorías seleccionadas en la consola
-  console.log("Categorías seleccionadas para eliminar:", categoriasAEliminar);
+  if (radioButtons.length === 0) {
+    alert("Por favor, seleccione una categoría para eliminar.");
+    return;
+  }
 
-  // Enviar las categorías seleccionadas al servidor para eliminarlas
-  fetch("http://localhost:8585/categorias", {
+  // Obtener el valor del ID de la categoría seleccionada
+  const categoriaAEliminar = radioButtons[0].value;
+
+  console.log(categoriaAEliminar);
+
+  // Mostrar el ID de la categoría seleccionada en la consola
+  console.log("Categoría seleccionada para eliminar:", categoriaAEliminar);
+
+  // Enviar el ID de la categoría seleccionada al servidor para eliminarla
+  fetch(`http://localhost:8585/categorias/${categoriaAEliminar}`, {
     method: "DELETE", // Método DELETE para eliminar recursos
-    headers: {
-      "Content-Type": "application/json", // Especificar el tipo de contenido JSON
-    },
-    body: JSON.stringify({ ids: categoriasAEliminar }), // Enviar el array de IDs en el cuerpo de la solicitud
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error al eliminar categorías"); // Lanzar error si la respuesta no es exitosa
-      }
+  }).then((response) => {
+    console.log(response);
+    if (response.ok) {
+      console.log("Categoría eliminada exitosamente");
+      obtenerDatosYMostrarTabla();
       return response.json(); // Convertir la respuesta a JSON si es exitosa
-    })
-    .then((data) => {
-      console.log("Categorías eliminadas exitosamente:", data); // Manejar la respuesta del servidor
-    })
-    .catch((error) => {
-      alert("No se puede eliminar categoria, esta vinculada a productos");
-      console.error("Error al eliminar categorías:", error); // Capturar y manejar cualquier error
-    });
+    } else {
+      alert("No se puede eliminar la categoría, está vinculada a productos");
+      throw new Error(
+        "No se puede eliminar la categoría, está vinculada a productos"
+      );
+    }
+  });
 }
-
 // Llamar a la función para mostrar los datos en la tabla cuando se cargue la página
 window.onload = obtenerDatosYMostrarTabla;
 
