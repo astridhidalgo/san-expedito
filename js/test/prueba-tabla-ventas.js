@@ -1,4 +1,5 @@
 let precioTotal = 0;
+let total = 0;
 document.addEventListener("DOMContentLoaded", async function () {
   document
     .getElementById("buscarProducto")
@@ -59,23 +60,22 @@ document.addEventListener("DOMContentLoaded", async function () {
       tbody.appendChild(fila);
     });
 
-    // Agregar evento de clic a los botones de eliminar
     const botonesEliminar = document.querySelectorAll(".eliminarBtn");
     botonesEliminar.forEach((boton) => {
-      boton.addEventListener("click", function () {
-        // Obtener el precio del producto que se eliminará
+      boton.addEventListener("click", function (event) {
+        event.stopPropagation();
+
         const precioProductoEliminar = parseFloat(
-          this.closest("tr").querySelector("td:nth-child(4)").textContent.trim()
+          this.closest("tr").querySelector(".totalProducto").textContent.trim()
         );
 
-        // Reducir el precio total al eliminar el producto
+        // Restar el precio del producto eliminado del precio total
         precioTotal -= precioProductoEliminar;
 
         // Actualizar el contenido del elemento que muestra el precio total
         document.getElementById("precioTotal").textContent =
           precioTotal.toFixed(2);
 
-        // Eliminar la fila de la tabla
         const fila = this.closest("tr");
         fila.remove();
       });
@@ -90,26 +90,21 @@ document.addEventListener("DOMContentLoaded", async function () {
 
           // Obtener el precio del producto
           const precio =
-            parseFloat(
-              this.closest("tr")
-                .querySelector("td:nth-child(5)")
-                .textContent.trim()
-            ) || 0;
+            this.closest("tr")
+              .querySelector("td:nth-child(5)")
+              .textContent.trim() || 0;
 
           // Calcular el total del producto multiplicando la cantidad por el precio
-          const total = cantidad * precio;
+          total = cantidad * precio;
           const precioFormateado1 = total.toFixed(2);
-          const texto = "Bs. ";
-          const mensaje = texto + precioFormateado1;
           this.closest("tr").querySelector(".totalProducto").textContent =
-            mensaje;
+            precioFormateado1;
 
           precioTotal = precioTotal + total;
           const preciototalFormateado = precioTotal.toFixed(2);
-          const texto1 = "Bs. ";
-          const mensaje1 = texto1 + preciototalFormateado;
           // Asignar el total general al campo específico
-          document.getElementById("precioTotal").textContent = mensaje1;
+          document.getElementById("precioTotal").textContent =
+            preciototalFormateado;
           campo.disabled = true;
         }
       });
@@ -165,6 +160,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 
+  function recalcularPrecioTotal() {
+    let nuevoPrecioTotal = 0;
+    document.querySelectorAll(".totalProducto").forEach((totalProducto) => {
+      nuevoPrecioTotal += parseFloat(totalProducto.textContent.trim());
+    });
+    precioTotal = nuevoPrecioTotal;
+    document.getElementById("precioTotal").textContent = precioTotal.toFixed(2);
+  }
+
   // Ejemplo de cómo usar la función obtenerUltimoCorrelativo()
   obtenerUltimoCorrelativo().then((ultimoCorrelativo) => {
     if (ultimoCorrelativo !== null) {
@@ -173,6 +177,9 @@ document.addEventListener("DOMContentLoaded", async function () {
       const correlativoConCeros = String(nuevoCorrelativo).padStart(10, "0"); // Ajusta la longitud total según sea necesario
       numFactura.textContent = `N° Factura: ${correlativoConCeros}`;
     } else {
+      const numFactura = document.querySelector(".NumeroFactura");
+      const correlativoConCeros = "0000000001";
+      numFactura.textContent = `N° Factura: ${correlativoConCeros}`;
       console.log("No se pudo obtener el último correlativo.");
     }
   });
