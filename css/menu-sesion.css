@@ -6,6 +6,27 @@
 	--TamanyoBoton: 125px;
 }
 
+.LogotipoSGI
+{
+	display: grid;
+	grid-template-columns: 130px auto;
+
+	position: absolute;
+	top: 15px;
+	left: 15px;
+
+	img
+	{ height: 50px; }
+
+	p
+	{
+		height: 50px;
+		font-size: 1.4rem; 
+	}
+
+	opacity: 0.5;
+}
+
 .MenuSesion
 {
 	display: flex;
@@ -26,14 +47,6 @@
 		
 		border-radius: 100%;
 		background-color: lightblue;
-
-		&::before
-		{
-			position: absolute;
-			top: 45%;
-			left: 8%;
-			content: "logotipo de empresa";
-		}
 	}
 
 	.MenuGrid
