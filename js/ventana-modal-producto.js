@@ -91,6 +91,7 @@ async function abrirModalModificarProducto(producto) {
   );
 }
 
+//Función que crea productos
 async function crearProducto(datosProductos) {
   console.log(crearProducto);
   try {
@@ -118,7 +119,7 @@ async function crearProducto(datosProductos) {
   location.reload();
 }
 
-// Función para actualizar un producto existente
+//Función que actualiza producto
 async function actualizarProducto(datosProductoModificado, id) {
   console.log("ACTUALIZAR");
   console.log(datosProductoModificado);
@@ -135,10 +136,8 @@ async function actualizarProducto(datosProductoModificado, id) {
     });
     if (respuesta.ok) {
       console.log("Producto modificado correctamente");
-      // Puedes hacer algo después de modificar el producto, como cerrar el modal
       $(".FondoModal").css("display", "none");
       $(".VentanaModal").hide();
-      // También puedes recargar la página o actualizar la lista de productos
     } else {
       console.error("Error al modificar el producto:", respuesta.statusText);
     }

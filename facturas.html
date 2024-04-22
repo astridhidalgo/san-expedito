@@ -14,7 +14,7 @@
         src="./img/logotipo/logo_san_expedito.png"
         title="Logotipo de San Expedito"
         alt="Logotipo de San Expedito"
-      >
+      />
       <div class="MenuGrid">
         <a class="BotonMenu Ventas" href="./ventas.html" draggable="false">
           <span>Ventas</span>
@@ -44,9 +44,9 @@
           <span>Facturas</span>
         </a>
       </div>
-      <a class="BotonCerrarSesion" href="#" draggable="false">
+      <button type="submit" class="BotonCerrarSesion" draggable="false">
         <span>Cerrar sesión</span>
-      </a>
+      </button>
     </nav>
     <div class="ContenedorPrincipal">
       <div class="Encabezado">
@@ -61,8 +61,7 @@
             name="ValorBusqueda"
             placeholder="¿Qué necesitas buscar?"
           />
-		  <div class="espacio-vacio">
-		  </div>
+          <div class="espacio-vacio"></div>
           <label class="FechaLabel">
             Desde:
             <input
@@ -138,7 +137,9 @@
             <div class="PrecioTotal">Total: 00</div>
           </div>
           <div class="GridFilaCuatro">
-            <button class="BotonImprimir" type="button">Imprimir</button>
+            <button id="btnImprimir" class="BotonImprimir" type="button">
+              Imprimir
+            </button>
             <button class="BotonCancelar" type="button">Cerrar</button>
           </div>
         </form>
@@ -151,5 +152,6 @@
     <script src="./js/ext/jquery.js"></script>
     <script src="./js/ventana-modal.js"></script>
     <script src="./js/barraBusqueda.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>

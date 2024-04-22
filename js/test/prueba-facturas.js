@@ -1,7 +1,10 @@
 // Función para abrir el modal y mostrar los detalles de la factura
+let factId = 0;
+
 function abrirModalYMostrarDetalles(facturaId) {
   // Realizar la solicitud a la API para obtener los detalles de la factura
   const result = localStorage.getItem("facturaId");
+  factId = facturaId;
   console.log(facturaId);
   const url = `http://localhost:8585/facturas/${facturaId}`;
   fetch(url)
@@ -17,7 +20,7 @@ function abrirModalYMostrarDetalles(facturaId) {
       $(".TablaFactura2 tbody").empty();
 
       // Agregar los productos a la tabla
-      data.Factura_Producto.forEach((Fproducto) => {
+      data.factura_producto.forEach((Fproducto) => {
         const fila = `<tr>
 						  <td>${Fproducto.producto.codigo}</td>
 						  <td>${Fproducto.producto.nombre}</td>
@@ -46,4 +49,57 @@ function abrirModalYMostrarDetalles(facturaId) {
     .catch((error) =>
       console.error("Error al obtener los detalles de la factura:", error)
     );
+}
+
+// Agregar un listener de eventos al botón
+async function generarPdf() {
+  console.log(factId);
+  try {
+    const res = await fetch(`http://localhost:8585/facturas/${factId}`);
+    const datos = await res.json();
+
+    console.log(datos);
+    const datosFactura = {
+      total: datos.total,
+      fecha_creacion: datos.fecha_creacion,
+      numero_factura: datos.numero_factura,
+      cliente: {
+        id: datos.cliente.id,
+        nombre: datos.cliente.nombre,
+        apellido: datos.cliente.apellido,
+        cedula: datos.cliente.cedula,
+      },
+      productos: datos.factura_producto.map((Fproducto) => ({
+        codigo: Fproducto.producto.codigo,
+        nombre: Fproducto.producto.nombre,
+        cantidad: Fproducto.producto.cantidad,
+        precio: Fproducto.producto.precio,
+      })),
+    };
+
+    // Realizar la llamada a la API para generar el PDF
+    const respuesta = await fetch("http://localhost:8585/pdf", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(datosFactura),
+    });
+    const respuestaJson = await respuesta.json();
+    console.log(respuestaJson.url);
+
+    if (respuesta.ok) {
+      const fileUrl = respuestaJson.url;
+      //const httpUrl = fileUrl.replace("file:///", "");
+      window.open(fileUrl, "_blank");
+    } else {
+      // Error al generar el PDF
+      console.error("Error al generar el PDF:", respuesta.statusText);
+      alert("Error al generar el PDF. Por favor, intenta de nuevo más tarde.");
+    }
+  } catch (error) {
+    // Error de red u otro error
+    console.error("Error al generar el PDF:", error);
+    alert("Error al generar el PDF. Por favor, intenta de nuevo más tarde.");
+  }
 }

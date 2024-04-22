@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Ejemplo de cómo usar la función obtenerUltimoCorrelativo()
   obtenerUltimoCorrelativo().then((ultimoCorrelativo) => {
+    console.log(ultimoCorrelativo);
     if (ultimoCorrelativo !== null) {
       const nuevoCorrelativo = Number(ultimoCorrelativo) + 1;
       const numFactura = document.querySelector(".NumeroFactura");

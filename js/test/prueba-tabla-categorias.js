@@ -86,3 +86,37 @@ document.addEventListener("DOMContentLoaded", function () {
     eliminarCategoriasSeleccionadas();
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const botonActualizarCategorias = document.getElementById(
+    "botonModificarCategorias"
+  );
+  botonActualizarCategorias.addEventListener("click", function () {
+    actualizarCategoriaSeleccionada();
+  });
+});
+
+async function actualizarCategoriaSeleccionada() {
+  const tabla = document.getElementById("tabla-categorias");
+  const radioButtons = tabla.querySelectorAll("input[type='radio']:checked");
+
+  if (radioButtons.length === 0) {
+    alert("Por favor, seleccione una categoria para Modificar.");
+    $(".FondoModal").css("display", "none");
+    $(".VentanaModal").hide();
+    return;
+  }
+  const categoriaAModificar = radioButtons[0].value;
+
+  console.log("Categoria seleccionada para modificar:", categoriaAModificar);
+  try {
+    const respuesta = await fetch(
+      `http://localhost:8585/categorias/${categoriaAModificar}`
+    );
+    const datos = await respuesta.json();
+    console.log(datos);
+    abrirModalModificarcategorias(datos);
+  } catch (error) {
+    console.error("Error al obtener la cantidad de productos:", error);
+  }
+}

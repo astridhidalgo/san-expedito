@@ -11,10 +11,10 @@
       <!-- reemplazar div con imagen -->
       <img
         class="LogoFirma"
-		src="./img/logotipo/logo_san_expedito.png"
+        src="./img/logotipo/logo_san_expedito.png"
         title="Logotipo de San Expedito"
         alt="Logotipo de San Expedito"
-      >
+      />
       <div class="MenuGrid">
         <a class="BotonMenu Ventas" href="./ventas.html" draggable="false">
           <span>Ventas</span>
@@ -40,9 +40,9 @@
           <span>Facturas</span>
         </a>
       </div>
-      <a class="BotonCerrarSesion" href="#" draggable="false">
+      <button type="submit" class="BotonCerrarSesion" draggable="false">
         <span>Cerrar sesión</span>
-      </a>
+      </button>
     </nav>
     <div class="ContenedorPrincipal">
       <div class="Encabezado">
@@ -52,7 +52,11 @@
       <div class="AreaTrabajo">
         <div class="BarraHerramientas">
           <button class="BotonAgregarProducto" type="button">Agregar</button>
-          <button class="BotonModificarProducto" type="button">
+          <button
+            id="botonModificarCategorias"
+            class="BotonModificarProducto"
+            type="button"
+          >
             Modificar
           </button>
           <button
@@ -96,7 +100,12 @@
           method="post"
         >
           <!-- campo oculto que recibirá el ID de la categoría a modificar -->
-          <input style="display: none;" id="" class="IdValorCategoria" type="number">
+          <input
+            style="display: none"
+            id=""
+            class="IdValorCategoria"
+            type="number"
+          />
           <div class="GridFilaUno">
             <input
               class="NombreCategoria"
@@ -118,5 +127,6 @@
     </div>
     <script src="./js/ext/jquery.js"></script>
     <script src="./js/ventana-modal.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
