@@ -35,6 +35,7 @@ async function login(datosUsuario) {
       window.location.href = "./ventas.html";
     } else {
       console.error("Error al insertar la categoría:", respuesta.statusText);
+      alert("Las credenciales introduciadas no son correctas.");
     }
   } catch (error) {
     console.error("Error al insertar la categoría:", error);

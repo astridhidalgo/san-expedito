@@ -89,7 +89,7 @@ async function generarPdf() {
     console.log(respuestaJson.url);
 
     if (respuesta.ok) {
-      const fileUrl = "http://localhost/sgi5/factura.pdf";
+      const fileUrl = "http://localhost/localsites/sgi5/factura.pdf";
       window.open(fileUrl, "_blank");
     } else {
       // Error al generar el PDF
