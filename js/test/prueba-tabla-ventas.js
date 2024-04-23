@@ -10,30 +10,33 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (searchTerm !== "") {
           // Solo realizar la búsqueda si el término de búsqueda no está vacío
           console.log("Buscando:", searchTerm);
-
           // Hacer la solicitud a la API
-          try {
-            const response = await fetch(
-              `http://localhost:8585/productos/${searchTerm}`
-            );
-
-            if (response.ok) {
-              // Convertir la respuesta a JSON
-              const data = await response.json();
-              const result = [];
-              result.push(data);
-              console.log(result);
-              mostrarResultados(result);
-              event.target.value = "";
-            } else {
-              alert("El codigo de producto no existe");
-              console.error(
-                "Error al realizar la solicitud a la API:",
-                response.statusText
+          const result = buscarCodigo(searchTerm);
+          console.log(result);
+          if (!result) {
+            try {
+              const response = await fetch(
+                `http://localhost:8585/productos/${searchTerm}`
               );
+
+              if (response.ok) {
+                // Convertir la respuesta a JSON
+                const data = await response.json();
+                const result = [];
+                result.push(data);
+                console.log(result);
+                mostrarResultados(result);
+                event.target.value = "";
+              } else {
+                alert("El codigo de producto no existe");
+                console.error(
+                  "Error al realizar la solicitud a la API:",
+                  response.statusText
+                );
+              }
+            } catch (error) {
+              console.error("Error al realizar la solicitud a la API:", error);
             }
-          } catch (error) {
-            console.error("Error al realizar la solicitud a la API:", error);
           }
         }
       }
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const tabla = document.getElementById("tablaResultados");
     const tbody = tabla.querySelector("tbody");
 
+    let codigo = "";
     // Iterar sobre los datos y agregar filas a la tabla
     result.forEach((producto) => {
       const fila = document.createElement("tr");
@@ -54,13 +58,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 			<td><input id="cantidadCompra_${producto.codigo}" class="cantidadCompra" name="CantidadCompra"></td>
 			<td>${producto.precio}</td>
 			<td class="totalProducto">0</td>
-            <td><button class="eliminarBtn">Eliminar</button></td>
+            <td><button id="eliminarBtn_${producto.codigo}"  class="eliminarBtn">Eliminar</button></td>
 			<td style="display:none;" class="productoId">${producto.id}</td>
         `;
       tbody.appendChild(fila);
+      codigo = producto.codigo;
     });
 
-    const botonesEliminar = document.querySelectorAll(".eliminarBtn");
+    const botonesEliminar = document.querySelectorAll("#eliminarBtn_" + codigo);
     botonesEliminar.forEach((boton) => {
       boton.addEventListener("click", function (event) {
         event.stopPropagation();
@@ -70,20 +75,21 @@ document.addEventListener("DOMContentLoaded", async function () {
         );
 
         // Restar el precio del producto eliminado del precio total
-        precioTotal -= precioProductoEliminar;
+        //precioTotal =
 
         // Actualizar el contenido del elemento que muestra el precio total
-        document.getElementById("precioTotal").textContent =
-          precioTotal.toFixed(2);
+        //document.getElementById("precioTotal").textContent =
+        //precioTotal.toFixed(2);
 
         const fila = this.closest("tr");
         fila.remove();
+        totalizar();
       });
     });
 
     const camposCantidad = document.querySelectorAll(".cantidadCompra");
     camposCantidad.forEach((campo) => {
-      campo.addEventListener("keydown", function (event) {
+      campo.addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
           // Obtener el valor de la cantidad ingresada
           const cantidad = parseInt(this.value.trim(), 10) || 0;
@@ -100,12 +106,13 @@ document.addEventListener("DOMContentLoaded", async function () {
           this.closest("tr").querySelector(".totalProducto").textContent =
             precioFormateado1;
 
-          precioTotal = precioTotal + total;
-          const preciototalFormateado = precioTotal.toFixed(2);
+          //precioTotal = totalizar();
+          //const preciototalFormateado = precioTotal.toFixed(2);
           // Asignar el total general al campo específico
-          document.getElementById("precioTotal").textContent =
-            preciototalFormateado;
+          //document.getElementById("precioTotal").textContent = preciototalFormateado;
+
           campo.disabled = true;
+          totalizar();
         }
       });
     });
@@ -158,15 +165,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.error("Error al realizar la solicitud:", error);
       return null;
     }
-  }
-
-  function recalcularPrecioTotal() {
-    let nuevoPrecioTotal = 0;
-    document.querySelectorAll(".totalProducto").forEach((totalProducto) => {
-      nuevoPrecioTotal += parseFloat(totalProducto.textContent.trim());
-    });
-    precioTotal = nuevoPrecioTotal;
-    document.getElementById("precioTotal").textContent = precioTotal.toFixed(2);
   }
 
   // Ejemplo de cómo usar la función obtenerUltimoCorrelativo()
@@ -223,7 +221,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           apellido: apellidoCliente,
         },
         numero_factura: numeroFactura,
-        fecha: fechaFactura,
+        fecha: new Date(),
         total: totalFormat,
         productos: productos,
       };
@@ -252,3 +250,33 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     });
 });
+
+function buscarCodigo(searchTerm) {
+  let result = false;
+  document.querySelectorAll("#tablaResultados tbody tr").forEach((row) => {
+    const codigo = row.querySelector("td:nth-child(1)").textContent;
+    if (codigo === searchTerm) {
+      let cantidad = document.querySelector("#cantidadCompra_" + codigo);
+      cantidad.disabled = false;
+      result = true;
+    }
+  });
+
+  if (result === true) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function totalizar() {
+  let result = 0;
+  document.querySelectorAll("#tablaResultados tbody tr").forEach((row) => {
+    const precio = row.querySelector("td:nth-child(6)").textContent;
+    result = result + parseInt(precio);
+  });
+  console.log(result);
+  const preciototalFormateado = result.toFixed(2);
+  // Asignar el total general al campo específico
+  document.getElementById("precioTotal").textContent = preciototalFormateado;
+}
