@@ -208,9 +208,18 @@ document.addEventListener("DOMContentLoaded", async function () {
         const nombre = row.querySelector("td:nth-child(2)").textContent;
         const cantidad = row.querySelector(".cantidadCompra").value;
         const precio = row.querySelector("td:nth-child(5)").textContent;
+        const totalPorProducto =
+          row.querySelector("td:nth-child(6)").textContent;
 
         const id = row.querySelector(".productoId").textContent;
-        productos.push({ codigo, nombre, cantidad, precio, id });
+        productos.push({
+          codigo,
+          nombre,
+          cantidad,
+          precio,
+          totalPorProducto,
+          id,
+        });
       });
 
       // 5. Organizar los datos

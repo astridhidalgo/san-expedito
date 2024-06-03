@@ -26,6 +26,7 @@ function abrirModalYMostrarDetalles(facturaId) {
 						  <td>${Fproducto.producto.nombre}</td>
 						  <td>${Fproducto.cantidad}</td>
 						  <td>${Fproducto.producto.precio}</td>
+              <td>${Fproducto.totalPorProducto}</td>
 						</tr>`;
         $(".TablaFactura2 tbody").append(fila);
       });
@@ -58,7 +59,7 @@ async function generarPdf() {
     const res = await fetch(`http://localhost:8585/facturas/${factId}`);
     const datos = await res.json();
 
-    console.log(datos);
+    console.log(datos.factura_producto);
     const datosFactura = {
       total: datos.total,
       fecha_creacion: datos.fecha_creacion,
@@ -72,8 +73,9 @@ async function generarPdf() {
       productos: datos.factura_producto.map((Fproducto) => ({
         codigo: Fproducto.producto.codigo,
         nombre: Fproducto.producto.nombre,
-        cantidad: Fproducto.producto.cantidad,
+        cantidad: Fproducto.cantidad,
         precio: Fproducto.producto.precio,
+        totalPorProducto: Fproducto.totalPorProducto,
       })),
     };
 
@@ -89,7 +91,7 @@ async function generarPdf() {
     console.log(respuestaJson.url);
 
     if (respuesta.ok) {
-      const fileUrl = "http://localhost/sgi5/factura.pdf";
+      const fileUrl = "http://localhost/localsites/sgi5/factura.pdf";
       window.open(fileUrl, "_blank");
     } else {
       // Error al generar el PDF
