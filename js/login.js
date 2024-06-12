@@ -1,4 +1,5 @@
 $(".BotonCerrarSesion").click(function () {
+	sessionStorage.clear();
   cierreSesion();
 });
 
@@ -7,9 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   ventanaLogin.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const usuario = document.querySelector(".nombreUsuario").value;
-    const contrasenya = document.querySelector(".Contrasenya").value;
-    const rol = document.querySelector(".TipoCuenta").value;
+    const usuario = document.querySelector(".nombreUsuario").value; const contrasenya = document.querySelector(".Contrasenya").value; const rol = document.querySelector(".TipoCuenta").value;
     // Objeto con los datos a enviar a la API
     const datos = {
       nombre: usuario,
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function login(datosUsuario) {
   try {
     // Realizar la llamada a la API para insertar la categoría
-    const respuesta = await fetch("http://localhost:8585/auth/login", {
+    const respuesta = await fetch("http://localhost:8585/usuarios/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +31,7 @@ async function login(datosUsuario) {
     });
 
     if (respuesta.ok) {
+      sessionStorage.setItem("rol", datosUsuario.rol); // guardar rol en la sesión actual
       window.location.href = "./ventas.html";
     } else {
       console.error("Error al insertar la categoría:", respuesta.statusText);
