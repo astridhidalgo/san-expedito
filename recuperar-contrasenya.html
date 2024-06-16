@@ -7,27 +7,36 @@
     <title>SGI5</title>
   </head>
   <body>
-	  <div class="caj">
-		  <img src="./img/logotipo/logo_san_expedito_full.png" alt="logo san_expedito">
-			<form id="ventanaLogin" class="VentanaLogin">
-			  <p class="TituloLogin">Recuperar contraseña</p>
-			  <div class="CamposLogin">
-				<input
-				  class="nombreUsuario"
-				  name="correoUsuario"
-				  type="email"
-				  placeholder="Correo electrónico"
-				  required
-				/>
-			  </div>
-			  <button style="margin-bottom: 0px;" class="BotonIniciarSesion" type="submit">Enviar</button>
-			</form>
-	  </div>
+    <div class="caj">
+      <img
+        src="./img/logotipo/logo_san_expedito_full.png"
+        alt="logo san_expedito"
+      />
+      <form id="recuperacionContrasenya" class="VentanaLogin">
+        <p class="TituloLogin">Recuperar contraseña</p>
+        <div class="CamposLogin">
+          <input
+            class="nombreUsuario"
+            name="correoUsuario"
+            type="text"
+            placeholder="nombre usuario"
+            required
+          />
+        </div>
+        <button
+          style="margin-bottom: 0px"
+          class="BotonIniciarSesion"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
     <div class="Version">
       <p class="SGI5">v21.04.24-dev</p>
       <p class="NestJS">NestJS v10.3.2</p>
     </div>
     <script src="./js/ext/jquery.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="./js/recuperacionClave.js"></script>
   </body>
 </html>

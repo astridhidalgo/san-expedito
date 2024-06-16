@@ -7,40 +7,78 @@
     <title>SGI5</title>
   </head>
   <body>
-	  <div class="caj">
-		  <img src="./img/logotipo/logo_san_expedito_full.png" alt="logo san_expedito">
-			<form id="ventanaLogin" class="VentanaLogin">
-			  <p class="TituloLogin">Crear usuario</p>
-			  <div class="CamposLogin">
-				<input
-				  class="nombreUsuario"
-				  name="nombreUsuario"
-				  type="text"
-				  placeholder="Usuario"
-				  pattern="[0-9]*[A-Za-z]*[0-9]*"
-				  required
-				/>
-				<input
-				  class="Contrasenya"
-				  name="ContrasenyaCuenta"
-				  type="password"
-				  placeholder="Contraseña"
-				  pattern="[0-9]*[A-Za-z]*[0-9]*"
-				  required
-				/>
-				<select name="TipoCuenta" class="TipoCuenta">
-				  <option value="empleado">Trabajador</option>
-				  <option value="admin">Administrador</option>
-				</select>
-			  </div>
-			  <button style="margin-bottom: 0px;" class="BotonIniciarSesion" type="submit">Aceptar</button>
-			</form>
-	  </div>
+    <div class="caj">
+      <img
+        src="./img/logotipo/logo_san_expedito_full.png"
+        alt="logo san_expedito"
+      />
+      <form id="ventanaRegistro" class="VentanaLogin">
+        <p class="TituloLogin">Crear usuario</p>
+        <div class="CamposLogin">
+          <input
+            class="nombre"
+            name="nombre"
+            type="text"
+            placeholder="Nombre"
+            pattern="^[A-Za-z]+$"
+            title=" Nombre debe contener solo letras."
+            required
+          />
+          <input
+            class="apellido"
+            name="apellido"
+            type="text"
+            placeholder="Apellido"
+            pattern="^[A-Za-z]+$"
+            title=" Apellido debe contener solo letras."
+            required
+          />
+          <input
+            class="nombreUsuario"
+            name="nombreUsuario"
+            type="text"
+            placeholder="nombre usuario"
+            pattern="[0-9]*[A-Za-z]*[0-9]*"
+            required
+          />
+          <input
+            class="email"
+            name="email"
+            type="email"
+            placeholder="Email"
+            pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+            title="Por favor, ingrese una dirección de correo electrónico válida."
+            required
+          />
+
+          <input
+            class="Contrasenya"
+            name="ContrasenyaCuenta"
+            type="password"
+            placeholder="Contraseña"
+            pattern="^(?=.*[0-9])(?=.*[A-Za-z]).*$"
+            title="La contraseña debe contener al menos un número y una letra."
+            required
+          />
+          <select name="TipoCuenta" class="TipoCuenta">
+            <option value="empleado">Trabajador</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <button
+          style="margin-bottom: 0px"
+          class="BotonIniciarSesion"
+          type="submit"
+        >
+          Aceptar
+        </button>
+      </form>
+    </div>
     <div class="Version">
       <p class="SGI5">v21.04.24-dev</p>
       <p class="NestJS">NestJS v10.3.2</p>
     </div>
     <script src="./js/ext/jquery.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="./js/registroUsuario.js"></script>
   </body>
 </html>

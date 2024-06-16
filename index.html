@@ -7,45 +7,49 @@
     <title>SGI5</title>
   </head>
   <body>
-	  <div class="caj">
-		  <img src="./img/logotipo/logo_san_expedito_full.png" alt="logo san_expedito">
-			<form id="ventanaLogin" class="VentanaLogin">
-			  <p class="TituloLogin">Iniciar sesión</p>
-			  <div class="CamposLogin">
-				<input
-				  class="nombreUsuario"
-				  name="nombreUsuario"
-				  type="text"
-				  placeholder="Usuario"
-				  pattern="[0-9]*[A-Za-z]*[0-9]*"
-				  required
-				/>
-				<input
-				  class="Contrasenya"
-				  name="ContrasenyaCuenta"
-				  type="password"
-				  placeholder="Contraseña"
-				  pattern="[0-9]*[A-Za-z]*[0-9]*"
-				  required
-				/>
-				<select style="display: block;" name="TipoCuenta" class="TipoCuenta">
-				  <option value="empleado">Trabajador</option>
-				  <option value="admin">Administrador</option>
-				</select>
-			  </div>
-			  <button class="BotonIniciarSesion" type="submit">Aceptar</button>
-			  <p class="sinCuenta">
-			  	¿No tienes cuenta? <a href="./registro-sesion.html">Registrarse</a>
-				<br>
-			  	¿Olvidaste la contraseña? <a href="./recuperar-contrasenya.html">Recuperar</a>
-			  </p>
-			</form>
-	  </div>
+    <div class="caj">
+      <img
+        src="./img/logotipo/logo_san_expedito_full.png"
+        alt="logo san_expedito"
+      />
+      <form id="ventanaLogin" class="VentanaLogin">
+        <p class="TituloLogin">Iniciar sesión</p>
+        <div class="CamposLogin">
+          <input
+            class="nombreUsuario"
+            name="nombreUsuario"
+            type="text"
+            placeholder="Usuario"
+            pattern="[0-9]*[A-Za-z]*[0-9]*"
+            required
+          />
+          <input
+            class="Contrasenya"
+            name="ContrasenyaCuenta"
+            type="password"
+            placeholder="Contraseña"
+            pattern="^(?=.*[0-9])(?=.*[A-Za-z]).*$"
+            required
+          />
+          <select style="display: block" name="TipoCuenta" class="TipoCuenta">
+            <option value="empleado">Trabajador</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <button class="BotonIniciarSesion" type="submit">Aceptar</button>
+        <p class="sinCuenta">
+          ¿No tienes cuenta? <a href="./registro-sesion.html">Registrarse</a>
+          <br />
+          ¿Olvidaste la contraseña?
+          <a href="./recuperar-contrasenya.html">Recuperar</a>
+        </p>
+      </form>
+    </div>
     <div class="Version">
       <p class="SGI5">v21.04.24-dev</p>
       <p class="NestJS">NestJS v10.3.2</p>
     </div>
-	<!--
+    <!--
 	<script>
 		alert("ya no tiene sentido que el menú desplegable aquí, ¿sabes? de todas formas, no lo borré, sino que está oculto con el estilo 'display: none'.");
 	</script>
