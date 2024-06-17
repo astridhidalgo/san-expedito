@@ -3,27 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/menu-sesion.css" />
+    <link rel="stylesheet" href="./css/cuenta-usuario.css" />
     <title>SGI5</title>
   </head>
   <body>
-    <div class="LogotipoSGI">
-      <img
-        src="./img/logotipo/logo_sgi5.png"
-        title="Logotipo de SGI5"
-        alt="Logotipo de SGI5"
-      />
-      <p>
-        Sistema de Gestión de Inventario para
-        <br />
-        Distribuidora de Alimentos Pollo Café San Expedito
-      </p>
-    </div>
-    <nav class="MenuSesion">
+    <nav class="MenuLateral">
       <!-- reemplazar div con imagen -->
       <img
         class="LogoFirma"
-        src="./img/logotipo/logo_san_expedito_full.png"
+        src="./img/logotipo/logo_san_expedito.png"
         title="Logotipo de San Expedito"
         alt="Logotipo de San Expedito"
       />
@@ -38,11 +26,7 @@
         >
           <span>Productos</span>
         </a>
-        <a
-          class="BotonMenu Categorias"
-          href="./categorias.html"
-          draggable="false"
-        >
+        <a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
           <span>Categorías</span>
         </a>
         <a
@@ -55,24 +39,38 @@
         <a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
           <span>Facturas</span>
         </a>
-        <a class="BotonMenu CerrarSesion" href="#" draggable="false">
-          <span>Cerrar sesión</span>
-        </a>
         <a class="BotonMenu Cuenta" href="./cuenta-usuario.html" draggable="false">
           <span>Cuenta</span>
         </a>
         <a class="BotonMenu Usuarios" href="./lista-usuarios.html" draggable="false">
           <span>Usuarios</span>
         </a>
-        <a class="BotonMenu BaseDatos" href="./base-datos.html" draggable="false">
+        <a class="BotonMenu BaseDatos" href="#" draggable="false">
           <span>Base de datos</span>
         </a>
       </div>
+      <a class="BotonCerrarSesion" draggable="false">
+        <span>Cerrar sesión</span>
+      </a>
     </nav>
+    <div class="ContenedorPrincipal">
+      <div class="Encabezado">
+        <h1 class="Nombre">Base de datos</h1>
+		<p class="Descripcion">Exporta e importa los datos de la aplicación.</p>
+      </div>
+      <div class="AreaTrabajo">
+		  <form class="OpcionesBaseDatos">
+				  <button class="BotonExportar" type="button">Exportar</button>
+				  <button class="BotonImportar" type="button">Importar</button>
+		  </form>
+      </div>
+    </div>
     <div class="Version">
       <p class="SGI5">v21.04.24-dev</p>
       <p class="NestJS">NestJS v10.3.2</p>
     </div>
+    <script src="./js/ext/jquery.js"></script>
     <script src="./js/login.js"></script>
+    <script src="./js/botones-rol.js"></script>
   </body>
 </html>

@@ -185,6 +185,19 @@
 		}
 	}
 
+	.BaseDatos
+	{
+		background-image: url("../../img/botones/sql.png");
+		background-repeat: no-repeat;
+		background-position: 5% 50%;
+		background-size: 25%;
+
+		&:hover
+		{
+			background-image: url("../../img/botones/sql-seleccion.png");
+		}
+	}
+
 	.BotonCerrarSesion
 	{
 		background-image: url("../../img/botones/cerrar-sesion-seleccion.png");

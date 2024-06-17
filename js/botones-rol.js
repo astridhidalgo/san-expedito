@@ -1,8 +1,9 @@
-let rolActual = sessionStorage.getItem("rol");
-let botonProductos = document.querySelector(".BotonMenu.Productos");
-let botonCategorias = document.querySelector(".BotonMenu.Categorias");
-let botonProveedores = document.querySelector(".BotonMenu.Proveedores");
-let botonUsuarios = document.querySelector(".BotonMenu.Usuarios");
+const rolActual = sessionStorage.getItem("rol");
+const botonProductos = document.querySelector(".BotonMenu.Productos");
+const botonCategorias = document.querySelector(".BotonMenu.Categorias");
+const botonProveedores = document.querySelector(".BotonMenu.Proveedores");
+const botonUsuarios = document.querySelector(".BotonMenu.Usuarios");
+const botonBaseDatos = document.querySelector(".BotonMenu.BaseDatos");
 
 if (rolActual == "admin")
 {
@@ -11,6 +12,7 @@ if (rolActual == "admin")
 	botonProveedores.style = "display: block;";
 	botonProveedores.style = "display: block;";
 	botonUsuarios.style = "display: block;";
+	botonBaseDatos.style = "display: block;";
 }
 	else
 	{
@@ -18,4 +20,5 @@ if (rolActual == "admin")
 		botonCategorias.style = "display: none;";
 		botonProveedores.style = "display: none;";
 		botonUsuarios.style = "display: none;";
+		botonBaseDatos.style = "display: none;";
 	}

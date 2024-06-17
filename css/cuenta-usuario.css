@@ -64,7 +64,7 @@
 
 			background-color: var(--nord4);
 
-			input
+			select, input
 			{
 				display: block;
 				margin-bottom: 10px;
@@ -85,13 +85,70 @@
 
 			.BotonAceptarCambios
 			{
-				position: relative;
-				left: 50%;
-				transform: translateX(-50%);
+				padding: 6px;
+				width: 100%;
+
+				border: none;
+				background-color: var(--nord8);
+
+				color: var(--nord0);
+
+				&:hover
+				{
+					cursor: pointer;
+
+					background-color: var(--nord0);
+					color: var(--nord6);
+				}
+
+				&:active
+				{
+					background-color: var(--nordBG);
+					color: var(--nord6);
+				}
+			}
+		}
+
+		.OpcionesBaseDatos
+		{
+			display: flex;
+			gap: 10px;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			padding: 10px;
+
+			width: 350px;
+			height: min-content;
+
+			background-color: var(--nord4);
+
+			select, input
+			{
+				display: block;
+				margin-bottom: 10px;
 
 				padding: 6px;
 
-				width: 100px;
+				border: none;
+				background-color: var(--nord7);
+
+				color: var(--nord0);
+
+				&:hover
+				{
+					background-color: var(--nord8);
+					color: var(--nord3);
+				}
+			}
+
+			.BotonExportar, .BotonImportar
+			{
+				padding: 6px;
+				width: 100%;
 
 				border: none;
 				background-color: var(--nord8);
