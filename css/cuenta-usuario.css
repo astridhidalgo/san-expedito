@@ -47,74 +47,69 @@
 		width: 100%;
 		height: calc(100% - 109px);
 
-		.TablaUsuarios
+		.OpcionesUsuario
 		{
-			overflow-y: scroll;
+			display: flex;
+			flex-direction: column;
 
-			position: relative;
-			top: 20px;
-			left: 0px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 
-			width: inherit;
-			height: calc(100% - 80px);
+			padding: 10px;
 
-			background-color: lightblue;
+			width: 350px;
+			height: min-content;
 
-			table
+			background-color: var(--nord4);
+
+			input
 			{
-				/*
-				position: absolute;
-				top: 0px;
-				left: 0px;
-				*/
+				display: block;
+				margin-bottom: 10px;
 
-				width: 100%;
-				border-spacing: 0px;
+				padding: 6px;
 
-				thead
+				border: none;
+				background-color: var(--nord7);
+
+				color: var(--nord0);
+
+				&:hover
 				{
-					z-index: 1;
+					background-color: var(--nord8);
+					color: var(--nord3);
+				}
+			}
 
-					position: sticky;
-					top: 0px;
-					left: 0px;
+			.BotonAceptarCambios
+			{
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
 
-					background-color: var(--nord10);
+				padding: 6px;
+
+				width: 100px;
+
+				border: none;
+				background-color: var(--nord8);
+
+				color: var(--nord0);
+
+				&:hover
+				{
+					cursor: pointer;
+
+					background-color: var(--nord0);
 					color: var(--nord6);
-
-					th
-					{
-						padding: 10px;
-
-						&:nth-child(even)
-						{ background-color: rgba(255, 255, 255, 0.08); }
-					}
-
 				}
 
-				tbody
+				&:active
 				{
-					background-color: var(--navbar2);
-
-					tr
-					{
-						&:nth-child(even)
-						{ background-color: var(--navbar); }
-
-						&:hover
-						{
-							background-color: var(--nord6);
-							cursor: pointer;
-						}
-					}
-
-					td
-					{
-						padding: 10px;
-
-						&:nth-child(even)
-						{ background-color: rgba(255, 255, 255, 0.4); }
-					}
+					background-color: var(--nordBG);
+					color: var(--nord6);
 				}
 			}
 		}

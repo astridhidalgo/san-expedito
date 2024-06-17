@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/lista-usuarios.css" />
+    <link rel="stylesheet" href="./css/cuenta-usuario.css" />
     <title>SGI5</title>
   </head>
   <body>
@@ -39,10 +39,10 @@
         <a class="BotonMenu Facturas" href="./facturas.html" draggable="false">
           <span>Facturas</span>
         </a>
-        <a class="BotonMenu Cuenta" href="./cuenta-usuario.html" draggable="false">
+        <a class="BotonMenu Cuenta" href="#" draggable="false">
           <span>Cuenta</span>
         </a>
-        <a class="BotonMenu Usuarios" href="#" draggable="false">
+        <a class="BotonMenu Usuarios" href="./lista-usuarios.html" draggable="false">
           <span>Usuarios</span>
         </a>
       </div>
@@ -52,29 +52,19 @@
     </nav>
     <div class="ContenedorPrincipal">
       <div class="Encabezado">
-        <h1 class="Nombre">Usuarios</h1>
-		<p class="Descripcion">Mira los usuarios registrados</p>
+        <h1 class="Nombre">Cuenta</h1>
+		<p class="Descripcion">Cambia la información de tu cuenta</p>
       </div>
       <div class="AreaTrabajo">
-        <div class="TablaUsuarios">
-          <table id="tabla-usuarios">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Usuario</th>
-                <th>Correo</th>
-                <th>Rol de usuario</th>
-                <th>Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-				<!-- reemplazar relleno por datos de los usuarios -->
-			  <script src="./js/lista-usuarios.js"></script>
-            </tbody>
-          </table>
-        </div>
+		  <form class="OpcionesUsuario">
+			  <input class="NombreUsuario" type="text" name="nombreUsuario" placeholder="Usuario">
+			  <input class="ContrasenyaUsuarioActual" type="text" name="ContrasenyaUsuarioActual" placeholder="Contraseña actual">
+			  <input class="ContrasenyaUsuarioNueva" type="text" name="ContrasenyaUsuarioNueva" placeholder="Contraseña nueva">
+			  <input class="CorreoUsuario" type="email" name="CorreoUsuario" placeholder="Correo">
+			  <div>
+				  <button class="BotonAceptarCambios" type="submit">Aceptar</button>
+			  </div>
+		  </form>
       </div>
     </div>
     <div class="Version">
@@ -83,5 +73,6 @@
     </div>
     <script src="./js/ext/jquery.js"></script>
     <script src="./js/login.js"></script>
+    <script src="./js/botones-rol.js"></script>
   </body>
 </html>
