@@ -1,0 +1,369 @@
+@import "ext/normalize.css";
+@import "ext/general.css";
+
+@import "ext/menu-lateral.css";
+@import "ext/control-paginas.css";
+
+.ContenedorPrincipal
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+	width: calc(100% - 180px);
+	height: 100%;
+
+	.Encabezado
+	{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		
+		padding-left: 20px;
+		padding-right: 20px;
+
+		width: 100%;
+
+		.Nombre
+		{
+			margin-bottom: 10px;
+		}
+
+		.Descripcion
+		{
+			padding-bottom: 20px;
+			border-bottom: solid 2px var(--nord3);
+		}
+	}
+
+	.AreaTrabajo
+	{
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+
+		padding: 20px;
+
+		width: 100%;
+		height: calc(100% - 109px);
+
+		.BarraHerramientas
+		{
+			display: grid;
+			gap: 20px;
+			grid-template-columns: 200px auto;
+			
+			width: 100%;
+			height: 46px;
+
+			.BotonAgregarProducto
+			{
+				padding: 5px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: #007f7f;
+				background-image: url("../img/botones/agregar-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 10% 50%;
+				background-size: 32px;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.BotonModificarProducto
+			{
+				padding: 5px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: var(--nord10);
+				background-image: url("../img/botones/editar-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 10% 50%;
+				background-size: 32px;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.BotonEliminarProducto
+			{
+				padding: 5px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: var(--nord11);
+				background-image: url("../img/botones/borrar-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 10% 50%;
+				background-size: 32px;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.ContadorProductos
+			{
+				visibility: hidden;
+
+				padding: 5px;
+				text-align: right;
+
+				span
+				{
+					font-size: 2rem;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.TablaUsuarios
+		{
+			overflow-y: scroll;
+
+			position: relative;
+			top: 20px;
+			left: 0px;
+
+			width: inherit;
+			height: calc(100% - 80px);
+
+			background-color: lightblue;
+
+			table
+			{
+				/*
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				*/
+
+				width: 100%;
+				border-spacing: 0px;
+
+				thead
+				{
+					z-index: 1;
+
+					position: sticky;
+					top: 0px;
+					left: 0px;
+
+					background-color: var(--nord10);
+					color: var(--nord6);
+
+					th
+					{
+						padding: 10px;
+
+						&:nth-child(even)
+						{ background-color: rgba(255, 255, 255, 0.08); }
+					}
+
+				}
+
+				tbody
+				{
+					background-color: var(--navbar2);
+
+					tr
+					{
+						&:nth-child(even)
+						{ background-color: var(--navbar); }
+
+						&:hover
+						{
+							background-color: var(--nord6);
+							cursor: pointer;
+						}
+					}
+
+					td
+					{
+						padding: 10px;
+
+						&:nth-child(even)
+						{ background-color: rgba(255, 255, 255, 0.4); }
+					}
+				}
+			}
+		}
+	}
+}
+
+.FondoModal
+{
+	z-index: 1;
+	display: none;
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(00, 00, 00, 0.6);
+
+	.VentanaModal
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		aspect-ratio: 16 / 6;
+		width: 800px;
+
+		border: none;
+
+		.TituloModal
+		{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			padding: 6px;
+
+			background-color: var(--nord10);
+
+			color: var(--nord6);
+			font-weight: bold;
+		}
+
+		.FormularioProductos
+		{
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 500px;
+			height: min-content;
+
+			.GridFilaUno, .GridFilaCuatro
+			{
+				display: grid;
+				gap: 10px;
+			}
+
+			.GridFilaUno
+			{ grid-template-columns: auto; }
+
+			.GridFilaCuatro
+			{ grid-template-columns: auto auto; }
+
+			select, input
+			{
+				&:hover
+				{
+					background-color: var(--nord8);
+					color: var(--nord3);
+				}
+			}
+
+			.CodigoProducto, .NombreCategoria, .CantidadProducto, .PrecioProducto, .UnidadMedidaProducto, .ProveedorProducto, .CategoriaProducto
+			{
+				padding: 10px;
+
+				border: 0px;
+				background-color: var(--nord7);
+				color: var(--nord0);
+			}
+
+			.BotonConfirmar
+			{
+				padding: 12px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: #007f7f;
+				background-image: url("../img/botones/paloma-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 27% 50%;
+				background-size: 10%;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+
+			.BotonCancelar
+			{
+				padding: 12px;
+				padding-left: 40px;
+
+				border: 0px;
+
+				background-color: var(--nord11);
+				background-image: url("../img/botones/equis-seleccion.png");
+				background-repeat: no-repeat;
+				background-position: 27% 50%;
+				background-size: 10%;
+
+
+				color: var(--nord6);
+
+				&:hover
+				{
+					cursor: pointer;
+					background-color: var(--nord0);
+				}
+			}
+		}
+	}
+}
+
+.eliminarBtn
+{
+	z-index: 0;
+
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	padding: 10px;
+
+	border: none;
+	background-color: var(--nord11);
+	color: var(--nord6);
+
+	&:hover
+	{
+		cursor: pointer;
+		background-color: var(--nord0);
+	}
+}

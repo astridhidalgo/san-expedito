@@ -34,8 +34,7 @@
 		display: grid;
 		grid-template-columns: 100%;
 		grid-template-rows: var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton) var(--TamanyoBoton);
-
-		position: relative;
+position: relative;
 		top: 20px;
 		left: 50%;
 		transform: translateX(-50%);
@@ -160,6 +159,19 @@
 		&:hover
 		{
 			background-image: url("../../img/botones/orden-compra-seleccion.png");
+		}
+	}
+
+	.Usuarios
+	{
+		background-image: url("../../img/botones/grupos-usuarios.png");
+		background-repeat: no-repeat;
+		background-position: 5% 50%;
+		background-size: 25%;
+
+		&:hover
+		{
+			background-image: url("../../img/botones/grupos-usuarios-seleccion.png");
 		}
 	}
 
