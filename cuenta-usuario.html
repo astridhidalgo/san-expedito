@@ -26,7 +26,11 @@
         >
           <span>Productos</span>
         </a>
-        <a class="BotonMenu Categorias" href="./categorias.html" draggable="false">
+        <a
+          class="BotonMenu Categorias"
+          href="./categorias.html"
+          draggable="false"
+        >
           <span>Categorías</span>
         </a>
         <a
@@ -42,10 +46,18 @@
         <a class="BotonMenu Cuenta" href="#" draggable="false">
           <span>Cuenta</span>
         </a>
-        <a class="BotonMenu Usuarios" href="./lista-usuarios.html" draggable="false">
+        <a
+          class="BotonMenu Usuarios"
+          href="./lista-usuarios.html"
+          draggable="false"
+        >
           <span>Usuarios</span>
         </a>
-        <a class="BotonMenu BaseDatos" href="./base-datos.html" draggable="false">
+        <a
+          class="BotonMenu BaseDatos"
+          href="./base-datos.html"
+          draggable="false"
+        >
           <span>Base de datos</span>
         </a>
       </div>
@@ -56,18 +68,27 @@
     <div class="ContenedorPrincipal">
       <div class="Encabezado">
         <h1 class="Nombre">Cuenta</h1>
-		<p class="Descripcion">Cambia la información de tu cuenta</p>
+        <p class="Descripcion">Cambia la información de tu cuenta</p>
       </div>
       <div class="AreaTrabajo">
-		  <form class="OpcionesUsuario">
-			  <input class="NombreUsuario" type="text" name="nombreUsuario" placeholder="Nuevo usuario (opcional)">
-			  <input class="ContrasenyaUsuarioActual" type="text" name="ContrasenyaUsuarioActual" placeholder="Contraseña actual" required>
-			  <input class="ContrasenyaUsuarioNueva" type="text" name="ContrasenyaUsuarioNueva" placeholder="Contraseña nueva (opcional)">
-			  <input class="CorreoUsuario" type="email" name="CorreoUsuario" placeholder="Nuevo correo (opcional)">
-			  <div>
-				  <button class="BotonAceptarCambios" type="submit">Aceptar</button>
-			  </div>
-		  </form>
+        <form class="OpcionesUsuario" id="OpcionesUsuario">
+          <input
+            class="ContrasenyaUsuarioActual"
+            type="text"
+            name="ContrasenyaUsuarioActual"
+            placeholder="Contraseña actual"
+            required
+          />
+          <input
+            class="ContrasenyaUsuarioNueva"
+            type="text"
+            name="ContrasenyaUsuarioNueva"
+            placeholder="Contraseña nueva (opcional)"
+          />
+          <div>
+            <button class="BotonAceptarCambios" type="submit">Aceptar</button>
+          </div>
+        </form>
       </div>
     </div>
     <div class="Version">
@@ -75,7 +96,7 @@
       <p class="NestJS">NestJS v10.3.2</p>
     </div>
     <script src="./js/ext/jquery.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="./js/cuenta-usuario.js"></script>
     <script src="./js/botones-rol.js"></script>
   </body>
 </html>

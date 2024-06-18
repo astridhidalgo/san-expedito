@@ -2,33 +2,35 @@ $(".BotonCerrarSesion").click(function () {
   sessionStorage.clear();
   cierreSesion();
 });
-
 document.addEventListener("DOMContentLoaded", async function () {
-  const ventanaLogin = document.getElementById("ventanaLogin");
+  const opcionesUsuario = document.getElementById("OpcionesUsuario");
 
-  ventanaLogin.addEventListener("submit", async function (event) {
+  opcionesUsuario.addEventListener("submit", async function (event) {
     event.preventDefault();
-    const nombreusuario = document.querySelector(".nombreUsuario").value;
-    const contrasenya = document.querySelector(".Contrasenya").value;
-    const rol = document.querySelector(".TipoCuenta").value;
-    console.log(rol);
+    const contrasenyaActual = document.querySelector(
+      ".ContrasenyaUsuarioActual"
+    ).value;
+    const contrasenyaNueva = document.querySelector(
+      ".ContrasenyaUsuarioNueva"
+    ).value;
     // Objeto con los datos a enviar a la API
     const datos = {
-      nombreUsuario: nombreusuario,
-      contrasenya: contrasenya,
-      rol: rol,
+      contrasenyaActual: contrasenyaActual,
+      contrasenyaNueva: contrasenyaNueva,
     };
     login(datos);
   });
 });
 
 async function login(datosUsuario) {
-  try {
-    const url = "http://localhost:8585/usuarios/login";
+  const id = sessionStorage.getItem("idUsuario");
 
-    // Realizar la solicitud POST a la API de login
+  try {
+    const url = `http://localhost:8585/usuarios/${id}`;
+
+    // Realizar la solicitud PATCH a la API de login
     const response = await fetch(url, {
-      method: "POST",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -37,22 +39,13 @@ async function login(datosUsuario) {
 
     // Verificar si la respuesta fue exitosa
     if (response.ok) {
-      // Obtener los datos de la respuesta (generalmente el rol del usuario)
-      const datosRespuesta = await response.json();
-      // Guardar el rol en sessionStorage para mantener la sesión
-      sessionStorage.setItem("rol", datosRespuesta.rol);
-      sessionStorage.setItem("idUsuario", datosRespuesta.id);
-      // Redirigir al usuario a la página de ventas
-      window.location.href = "./ventas.html";
+      alert("usuario actualizado exitosamente");
+      limpiarFormulario();
     } else {
-      // Si hay un error en la respuesta, obtener los detalles del error
       const errorData = await response.json();
       if (errorData && errorData.message) {
         // Mostrar mensaje de error específico si está disponible
         alert(errorData.message);
-      } else {
-        // Mostrar un mensaje genérico si no se puede obtener un mensaje específico
-        alert("Error al iniciar sesión. Por favor, inténtelo de nuevo.");
       }
     }
   } catch (error) {
@@ -63,6 +56,13 @@ async function login(datosUsuario) {
     );
   }
 }
+
+function limpiarFormulario() {
+  // Limpiar campos de contraseña
+  document.querySelector(".ContrasenyaUsuarioActual").value = "";
+  document.querySelector(".ContrasenyaUsuarioNueva").value = "";
+}
+
 async function cierreSesion() {
   try {
     const confirmacion = await mostrarConfirmacion(
